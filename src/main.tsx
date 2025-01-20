@@ -1,14 +1,19 @@
 import React from 'react'
-import './App.css'
-import App from './App'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
+import { HomePage, SoundsPage, TemplatePage, ProjectPage } from './pages'
+import { HashRouter, Link, Route, Routes } from 'react-router-dom'
 import { createRoot } from 'react-dom/client'
+// import './App.module.scss'
+import './index.css'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter>
+    {/* @ts-ignore */}
+    <HashRouter>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/sounds" element={<SoundsPage />} />
+        <Route path="/sounds/:project" element={<ProjectPage />} />
+        <Route path="/template" element={<TemplatePage />} />
         <Route
           path="/about"
           element={
@@ -25,6 +30,6 @@ createRoot(document.getElementById('root') as HTMLElement).render(
           }
         />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 )

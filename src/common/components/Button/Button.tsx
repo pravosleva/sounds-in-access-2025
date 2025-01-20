@@ -1,0 +1,74 @@
+import { Button as _Button } from '@headlessui/react'
+import clsx from 'clsx'
+
+type TColor = 'default' | 'primary' | 'success' | 'warning' | 'error';
+type TProps = {
+  color: TColor;
+  children?: string | React.ReactNode | React.ReactNode[];
+  onClick?: () => void;
+  isDisabled?: boolean;
+  startIcon?: React.ReactNode;
+}
+
+export const Button = ({ children, color, onClick, isDisabled, startIcon }: TProps) => {
+  return (
+    <_Button
+      className={clsx(
+        'rounded',
+        'py-2',
+        'px-4',
+        'font-bold',
+
+        'flex',
+        'items-center',
+        'justify-center',
+        'w-full',
+        {
+          [clsx(
+            'bg-rose-600',
+            'data-[hover]:bg-rose-500',
+            'data-[active]:bg-rose-400',
+            'text-black',
+            'bg-gradient-to-r from-amber-400',
+          )]: color === 'error',
+          [clsx(
+            'bg-blue-600',
+            'data-[hover]:bg-blue-500',
+            'data-[active]:bg-blue-400',
+            'text-white',
+            'bg-gradient-to-r from-emerald-400',
+          )]: color === 'primary',
+          [clsx(
+            'bg-slate-600',
+            'data-[hover]:bg-slate-500',
+            'data-[active]:bg-slate-400',
+            'text-white',
+            'bg-gradient-to-r from-slate-400',
+          )]: color === 'default',
+          [clsx(
+            'bg-orange-600',
+            'data-[hover]:bg-orange-500',
+            'data-[active]:bg-orange-400',
+            'text-black',
+            'bg-gradient-to-r from-amber-300',
+          )]: color === 'warning',
+        },
+      )}
+      disabled={isDisabled}
+      onClick={onClick}
+    >
+      <span
+        style={{
+          display: 'inline-flex',
+          alignItems: 'center',
+          gap: '8px',
+        }}
+      >
+        {
+          !!startIcon && startIcon
+        }
+        {children}
+      </span>
+    </_Button>
+  )
+}
