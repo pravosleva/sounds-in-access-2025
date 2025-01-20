@@ -84,6 +84,14 @@
       "bg": {
         "src": "/static/projects/mems/audio/dich.jpeg"
       }
+    },
+    {
+      "title": "Ты по-моему перепутал",
+      "descr": "Паша Техник",
+      "audio": "/static/projects/mems/audio/ty-po-moemu-pereputal.mp4",
+      "bg": {
+        "src": "/static/projects/mems/audio/ty-po-moemu-pereputal.gif"
+      }
     }
   ]
 }
