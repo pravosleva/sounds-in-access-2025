@@ -16,7 +16,8 @@ export type TSoundPack = {
 export enum EProject {
   WHAT_WHERE_WHEN = 'what_where_when',
   TOM_AND_JERRY = 'tom-and-jerry',
-  COUNTER_STRIKE = 'cs',
+  GAMES = 'games',
+  MEMS = 'mems',
 }
 export enum ELoadStatus {
   INACTIVE = 'inactive',

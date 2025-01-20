@@ -1,0 +1,41 @@
+{
+  "title": "Games",
+  "descr": "",
+  "bg": {
+    "src": "/static/projects/games/main.jpg"
+  },
+  "items": [
+    {
+      "title": "Terrorists win",
+      "descr": "",
+      "audio": "/static/projects/games/audio/terrorists-win.mp3",
+      "bg": {
+        "src": "/static/projects/games/main.jpg"
+      }
+    },
+    {
+      "title": "Bomb has been defused",
+      "descr": "",
+      "audio": "/static/projects/games/audio/bomb-has-been-defused.mp3",
+      "bg": {
+        "src": "/static/projects/games/main.jpg"
+      }
+    },
+    {
+      "title": "Realistic Grenade Explode Sounds",
+      "descr": "",
+      "audio": "/static/projects/games/audio/grenade-realistic.mp3",
+      "bg": {
+        "src": "/static/projects/games/main.jpg"
+      }
+    },
+    {
+      "title": "Mission complete",
+      "descr": "GTA San Andreas",
+      "audio": "/static/projects/games/audio/gta-san-andreas.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/GTA-San-Andreas.webp"
+      }
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "title": "Mems",
+  "descr": "",
+  "bg": {
+    "src": ""
+  },
+  "items": [
+    {
+      "title": "Естесственно",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/estestvenno.mp4",
+      "bg": {
+        "src": "/static/projects/mems/audio/estestvenno.gif"
+      }
+    },
+    {
+      "title": "⚡️ Ты че, дурак, бл_",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/ty-che-durak-blya.mp4",
+      "bg": {
+        "src": "/static/projects/mems/audio/ty-che-durak-blya.jpg"
+      }
+    },
+    {
+      "title": "Наши полномочия все",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/polnomochiya-vse.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/polnomochiya-vse.png"
+      }
+    },
+    {
+      "title": "Ералаш - все",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/eralash-vse.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/eralash-vse.jpeg"
+      }
+    },
+    {
+      "title": "To be continued",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/kontsovka-filma-to-be-continued.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/to-be-continued.jpg"
+      }
+    },
+    {
+      "title": "Киборг убийца",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/rejisser-kiborg-ubiytsa.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/rejisser-kiborg-ubiytsa.webp"
+      }
+    },
+    {
+      "title": "Страшно очень страшно",
+      "descr": "Мы не знаем, что это такое...",
+      "audio": "/static/projects/mems/audio/strashno-ochen-strashno.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/strashno-ochen-strashno.jpg"
+      }
+    },
+    {
+      "title": "Смех",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/smeh.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/smeh.jpg"
+      }
+    },
+    {
+      "title": "Даладно (Якубович)",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/yacubovich-daladna.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/yacubovich-daladna.jpeg"
+      }
+    },
+    {
+      "title": "Дичь",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/dich.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/dich.jpeg"
+      }
+    }
+  ]
+}

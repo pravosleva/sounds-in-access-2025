@@ -3,6 +3,9 @@ import { proxy } from 'valtio'
 // import clsx from 'clsx'
 import pkg from '../../../package.json'
 import { ELoadStatus, EProject, TSoundPack } from './types'
+import gamesData from './data/games.json'
+import tomAndJerryData from './data/tom-and-jerry.json'
+import memsData from './data/mems.json'
 
 const PUBLIC_URL = import.meta.env.VITE_PUBLIC_URL || ''
 
@@ -12,7 +15,10 @@ class Singleton {
     [key in EProject]: TSoundPack;
   };
   private _cache: {
-    [key: string]: HTMLAudioElement;
+    [key: string]: {
+      audio: HTMLAudioElement;
+      status: ELoadStatus;
+    }
   };
   private _activeAudio: null | HTMLAudioElement;
 
@@ -32,97 +38,9 @@ class Singleton {
       activeAudioStatus: ELoadStatus.INACTIVE,
     })
     this._sounds = {
-      'cs': {
-        title: 'CS',
-        descr: '',
-        bg: {
-          src: '/static/projects/cs/main.jpg',
-        },
-        items: [
-          {
-            title: 'Terrorists win',
-            descr: '',
-            audio: '/static/projects/cs/audio/terrorists-win.mp3',
-            bg: {
-              src: '/static/projects/cs/main.jpg',
-            },
-          },
-          {
-            title: 'Bomb has been defused',
-            descr: '',
-            audio: '/static/projects/cs/audio/bomb-has-been-defused.mp3',
-            bg: {
-              src: '/static/projects/cs/main.jpg',
-            },
-          },
-          {
-            title: 'Realistic Grenade Explode Sounds',
-            descr: '',
-            audio: '/static/projects/cs/audio/grenade-realistic.mp3',
-            bg: {
-              src: '/static/projects/cs/main.jpg',
-            },
-          },
-        ],
-      },
-      'tom-and-jerry': {
-        title: 'Tom and Jerry',
-        descr: '',
-        bg: {
-          src: '/static/projects/tom-and-jerry/main.webp',
-        },
-        items: [
-          {
-            title: 'Main theme',
-            descr: '',
-            audio: '/static/projects/tom-and-jerry/audio/theme.mp3',
-            bg: {
-              src: '/static/projects/tom-and-jerry/audio/tom-and-jerry.jpeg',
-            },
-          },
-          {
-            title: 'Gene Deitch Big Boing',
-            descr: '',
-            audio: '/static/projects/tom-and-jerry/audio/Deitch_Big_Boing.ogg',
-            bg: {
-              src: '/static/projects/tom-and-jerry/audio/tom-and-jerry.jpeg',
-            },
-          },
-          {
-            title: 'The end',
-            descr: 'Music from the end of an episode',
-            audio: '/static/projects/tom-and-jerry/audio/the_end.wav',
-            bg: {
-              src: '/static/projects/tom-and-jerry/audio/the_end.jpg',
-            },
-          },
-          {
-            title: 'Power',
-            descr: 'Tom: laughing menacingly, "In me Power!"',
-            audio: '/static/projects/tom-and-jerry/audio/power.wav',
-            bg: {
-              src: '/static/projects/tom-and-jerry/audio/power.jpg',
-            },
-          },
-          {
-            title: 'Uncle Pecos',
-            descr: 'TV annoucer introduces Uncle Pecos',
-            audio: '/static/projects/tom-and-jerry/audio/pecos_intro.wav',
-            bg: {
-              src: '/static/projects/tom-and-jerry/audio/pecos_intro.webp',
-            },
-          },
-          // 
-          {
-            title: 'Tom\'s laugh',
-            descr: '',
-            audio: '/static/projects/tom-and-jerry/audio/t_laugh.wav',
-            bg: {
-              src: '/static/projects/tom-and-jerry/audio/t-laugh.gif',
-            },
-          },
-        ],
-      },
+      'games': gamesData,
+      'tom-and-jerry': tomAndJerryData,
+      'mems': memsData,
       'what_where_when': {
         title: 'Что? Где? Когда?',
         descr: 'Музыка из шоу',
@@ -328,8 +246,8 @@ class Singleton {
         if (!!this._sounds[projectName].items[soundIndex]) {
           const targetSrc = this._sounds[projectName].items[soundIndex].audio
           let audio
-          if (!!this._cache[targetSrc]) {
-            audio = this._cache[targetSrc]
+          if (!!this._cache[targetSrc] && this._cache[targetSrc].status !== ELoadStatus.ERRORED) {
+            audio = this._cache[targetSrc].audio
           } else {
             audio = new Audio(`${PUBLIC_URL}${targetSrc}`)
             if (!!cb) {
@@ -353,11 +271,14 @@ class Singleton {
               this._common.isAudioActive = false
             }
             audio.load()
-            this._cache[targetSrc] = audio
+            this._cache[targetSrc] = {
+              audio,
+              status: this._common.activeAudioStatus,
+            }
           }
           this._activeAudio = audio
           this._common.isAudioActive = true
-          audio.play()
+          this._cache[targetSrc].audio.play()
         } else throw new Error('Нет такого аудио файла')
       } else throw new Error('Нет такого проекта')
     } catch (err) {

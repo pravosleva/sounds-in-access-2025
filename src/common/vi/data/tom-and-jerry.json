@@ -1,0 +1,57 @@
+{
+  "title": "Tom and Jerry",
+  "descr": "",
+  "bg": {
+    "src": "/static/projects/tom-and-jerry/main.webp"
+  },
+  "items": [
+    {
+      "title": "Main theme",
+      "descr": "",
+      "audio": "/static/projects/tom-and-jerry/audio/theme.mp3",
+      "bg": {
+        "src": "/static/projects/tom-and-jerry/audio/tom-and-jerry.jpeg"
+      }
+    },
+    {
+      "title": "Gene Deitch Big Boing",
+      "descr": "",
+      "audio": "/static/projects/tom-and-jerry/audio/Deitch_Big_Boing.ogg",
+      "bg": {
+        "src": "/static/projects/tom-and-jerry/audio/tom-and-jerry.jpeg"
+      }
+    },
+    {
+      "title": "The end",
+      "descr": "Music from the end of an episode",
+      "audio": "/static/projects/tom-and-jerry/audio/the_end.wav",
+      "bg": {
+        "src": "/static/projects/tom-and-jerry/audio/the_end.jpg"
+      }
+    },
+    {
+      "title": "Power",
+      "descr": "Tom: laughing menacingly, \"In me Power!\"",
+      "audio": "/static/projects/tom-and-jerry/audio/power.wav",
+      "bg": {
+        "src": "/static/projects/tom-and-jerry/audio/power.jpg"
+      }
+    },
+    {
+      "title": "Uncle Pecos",
+      "descr": "TV annoucer introduces Uncle Pecos",
+      "audio": "/static/projects/tom-and-jerry/audio/pecos_intro.wav",
+      "bg": {
+        "src": "/static/projects/tom-and-jerry/audio/pecos_intro.webp"
+      }
+    },
+    {
+      "title": "Tom's laugh",
+      "descr": "",
+      "audio": "/static/projects/tom-and-jerry/audio/t_laugh.wav",
+      "bg": {
+        "src": "/static/projects/tom-and-jerry/audio/t-laugh.gif"
+      }
+    }
+  ]
+}
