@@ -27,11 +27,17 @@ export const ProjectHeader = ({ title, bg }: TProps) => {
         'md:rounded-br-md',
         'bg-center',
 
-        'shadow-md',
+        'shadow-lg',
         'shadow-white',
+        {
+          'backdrop-blur-sm': !bg.src,
+        },
       )}
       style={{
-        backgroundImage: `url("${PUBLIC_URL}${bg.src}")`,
+        zIndex: 1,
+        backgroundImage: !!bg.src
+          ? `url("${PUBLIC_URL}${bg.src}")`
+          : 'none',
         // backgroundPosition: 'center',
       }}
     >

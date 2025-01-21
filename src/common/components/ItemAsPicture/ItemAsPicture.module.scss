@@ -1,4 +1,5 @@
 .wrapperBg {
+
   // background-image: url(&quot;/static/img/blog/coming-soon-v3.jpg&quot;);
   // filter: grayscale(100%);
   // opacity: 0.5;
@@ -11,10 +12,11 @@
   transition: ease 0.5s all;
 
   .content {
-    background: linear-gradient(rgba(1, 98, 200, 0.9) 30%,
-        rgba(1, 98, 200, 0.65) 60%,
-        rgba(255, 255, 255, 0) 100%);
-
+    // background: linear-gradient(rgba(1, 98, 200, 0.9) 30%,
+    //     rgba(1, 98, 200, 0.65) 60%,
+    //     rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0.7) 30%,
+        rgba(249, 115, 22, 0.6) 100%);
     max-width: 100%;
     height: 100%;
     border-radius: inherit;
@@ -36,4 +38,26 @@
 
 .cursorPointer {
   cursor: pointer;
+}
+
+.relativeBox {
+  position: relative;
+}
+
+.absoluteLabel {
+  position: absolute;
+  // border: 1px dashed #fff;
+  color: #fff;
+
+  height: 25px;
+  width: 25px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomRight {
+  right: 4px;
+  bottom: 4px;
 }

@@ -1,5 +1,7 @@
+import { useInView } from 'react-hook-inview'
 import clsx from 'clsx'
 import classes from './ItemAsPicture.module.scss'
+import { ELoadStatus } from '~/common/vi/types'
 
 const PUBLIC_URL = import.meta.env.VITE_PUBLIC_URL || ''
 
@@ -10,11 +12,16 @@ type TProps = {
     src: string;
   };
   onClick?: () => void;
+  bottomRightImage?: React.ReactNode;
 }
 
-export const ItemAsPicture = ({ title, bg, descr, onClick }: TProps) => {
+export const ItemAsPicture = ({ title, bg, descr, onClick, bottomRightImage }: TProps) => {
+  const [ref, inView] = useInView({
+    threshold: 0.5,
+  })
   return (
-    <div
+    <button
+      ref={ref}
       className={clsx(
         classes.wrapperBg,
         'rounded',
@@ -23,16 +30,31 @@ export const ItemAsPicture = ({ title, bg, descr, onClick }: TProps) => {
         // 'hover:outline',
         // 'hover:outline-offset-4',
         // 'hover:outline-solid',
+        
         'hover:ring-4',
         'hoer:ring-offset-2',
         'hover:ring-gray',
+        
+        'active:ring-4',
+        'active:ring-offset-2',
+        'active:ring-gray',
+
+        'focus:ring-2',
+        'focus:ring-offset-2',
+        'focus:ring-red',
+
+        'text-left',
+        'w-full',
         {
           [classes.cursorPointer]: !!onClick,
-        }
+        },
+        classes.relativeBox,
       )}
       onClick={onClick}
       style={{
-        backgroundImage: `url("${PUBLIC_URL}${bg.src}")`,
+        backgroundImage: inView
+          ? `url("${PUBLIC_URL}${bg.src}")`
+          : 'none',
       }}
     >
       <div
@@ -47,6 +69,18 @@ export const ItemAsPicture = ({ title, bg, descr, onClick }: TProps) => {
         <div className={classes.title}>{title}</div>
         {!!descr && <div className={classes.descr}>{descr}</div>}
       </div>
-    </div>
+      {
+        !!bottomRightImage && (
+          <span
+            className={clsx(
+              classes.absoluteLabel,
+              classes.bottomRight,
+            )}
+          >
+            {bottomRightImage}
+          </span>
+        )
+      }
+    </button>
   )
 }

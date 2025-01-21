@@ -8,17 +8,41 @@
     {
       "title": "Естесственно",
       "descr": "",
-      "audio": "/static/projects/mems/audio/estestvenno.mp4",
+      "audio": "/static/projects/mems/audio/estestvenno.mp3",
       "bg": {
         "src": "/static/projects/mems/audio/estestvenno.gif"
       }
     },
     {
-      "title": "⚡️ Ты че, дурак, бл_",
+      "title": "Бред же бред",
+      "descr": "Гармаш",
+      "audio": "/static/projects/mems/audio/bred-je-bred.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/bred-je-bred.png"
+      }
+    },
+    {
+      "title": "Ты втираешь мне какую-то дичь",
       "descr": "",
-      "audio": "/static/projects/mems/audio/ty-che-durak-blya.mp4",
+      "audio": "/static/projects/mems/audio/dich.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/dich.jpeg"
+      }
+    },
+    {
+      "title": "⚡️ Ты че, дурак, бл_",
+      "descr": "Недовольный клиент казино",
+      "audio": "/static/projects/mems/audio/ty-che-durak-blya.mp3",
       "bg": {
         "src": "/static/projects/mems/audio/ty-che-durak-blya.jpg"
+      }
+    },
+    {
+      "title": "⚡️ Ты кто такой, с_ка",
+      "descr": "Недовольный клиент казино",
+      "audio": "/static/projects/mems/audio/ty-kto-takoi-suka.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/ty-kto-takoi-suka.png"
       }
     },
     {
@@ -30,19 +54,27 @@
       }
     },
     {
-      "title": "Ералаш - все",
-      "descr": "",
-      "audio": "/static/projects/mems/audio/eralash-vse.mp3",
+      "title": "⚡️ Х/ф Спиздили",
+      "descr": "Гоблин",
+      "audio": "/static/projects/mems/audio/snatch.mp3",
       "bg": {
-        "src": "/static/projects/mems/audio/eralash-vse.jpeg"
+        "src": "/static/projects/mems/audio/snatch.jpg"
       }
     },
     {
-      "title": "To be continued",
-      "descr": "",
-      "audio": "/static/projects/mems/audio/kontsovka-filma-to-be-continued.mp3",
+      "title": "⚡️ Где деньги, Лебовски?",
+      "descr": "Гоблин",
+      "audio": "/static/projects/mems/audio/gde-dengi-lebovski.mp3",
       "bg": {
-        "src": "/static/projects/mems/audio/to-be-continued.jpg"
+        "src": "/static/projects/mems/audio/gde-dengi-lebovski.webp"
+      }
+    },
+    {
+      "title": "Да что ты такое несешь?",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/da-chto-ty-chert-poberi.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/da-chto-ty-chert-poberi.png"
       }
     },
     {
@@ -78,19 +110,35 @@
       }
     },
     {
-      "title": "Дичь",
-      "descr": "",
-      "audio": "/static/projects/mems/audio/dich.mp3",
+      "title": "Ты по-моему перепутал",
+      "descr": "Паша Техник",
+      "audio": "/static/projects/mems/audio/ty-po-moemu-pereputal.mp3",
       "bg": {
-        "src": "/static/projects/mems/audio/dich.jpeg"
+        "src": "/static/projects/mems/audio/ty-po-moemu-pereputal.gif"
       }
     },
     {
-      "title": "Ты по-моему перепутал",
-      "descr": "Паша Техник",
-      "audio": "/static/projects/mems/audio/ty-po-moemu-pereputal.mp4",
+      "title": "To be continued",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/kontsovka-filma-to-be-continued.mp3",
       "bg": {
-        "src": "/static/projects/mems/audio/ty-po-moemu-pereputal.gif"
+        "src": "/static/projects/mems/audio/to-be-continued.jpg"
+      }
+    },
+    {
+      "title": "Ералаш - все",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/eralash-vse.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/eralash-vse.jpeg"
+      }
+    },
+    {
+      "title": "Directed by ROBERT B.WEIDE",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/Directed-by-ROBERT-B.WEIDE.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/Directed-by-ROBERT-B.WEIDE.png"
       }
     }
   ]

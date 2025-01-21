@@ -3,11 +3,10 @@ import { useMemo, useCallback } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { vi } from '~/common'
 import { ItemAsPicture, Layout, ProjectHeader, ResponsiveBlock } from '~/common/components'
-import { EProject } from '~/common/vi/types'
+import { ELoadStatus, EProject } from '~/common/vi/types'
 import baseClasses from '~/App.module.scss'
-// import { useProxy } from 'valtio/utils'
 import { useSnapshot } from 'valtio/react'
-// import { Button } from '@headlessui/react'
+// import { useProxy } from 'valtio/utils'
 import { Button } from '~/common/components/'
 
 export const ProjectPage = () => {
@@ -40,6 +39,7 @@ export const ProjectPage = () => {
     })
   }, [params.project])
   const commonState = useSnapshot(vi.common)
+  const loadStatusState = useSnapshot(vi.loadStatus)
   const handleStopAudio = useCallback(() => {
     vi.stopCurrentSound()
   }, [])
@@ -57,7 +57,6 @@ export const ProjectPage = () => {
               />
               
               <ResponsiveBlock
-                // style={{ border: '1px solid red' }}
                 className={clsx(
                   'flex',
                   'flex-col',
@@ -75,6 +74,7 @@ export const ProjectPage = () => {
                     title,
                     descr,
                     bg,
+                    audio,
                   }, i) => {
                     return (
                       <ItemAsPicture
@@ -83,6 +83,47 @@ export const ProjectPage = () => {
                         descr={descr}
                         bg={bg}
                         onClick={handleProjectClick({ index: i })}
+                        bottomRightImage={
+                          !!loadStatusState[audio] && (
+                            <span>
+                              {
+                                loadStatusState[audio].value === ELoadStatus.INACTIVE
+                                ? <svg
+                                  style={{
+                                    width: '20px',
+                                    height: '20px',
+                                    // border: '1px solid lightgray',
+                                  }}
+                                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                                  <path strokeLinecap="round" strokeLinejoin="round" d="m7.49 12-3.75 3.75m0 0 3.75 3.75m-3.75-3.75h16.5V4.499" />
+                                </svg>
+                                : loadStatusState[audio].value === ELoadStatus.STARTED
+                                  ? <svg
+                                    style={{
+                                    width: '20px',
+                                    height: '20px',
+                                    // border: '1px solid lightgray',
+                                  }}
+                                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                    </svg>
+                                  : loadStatusState[audio].value === ELoadStatus.LOADED
+                                    ? <svg
+                                      style={{
+                                        width: '20px',
+                                        height: '20px',
+                                        // border: '1px solid lightgray',
+                                      }}
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      viewBox="0 0 24 24" 
+                                      fill="none" strokeWidth="1.5" stroke="currentColor">
+                                      <path stroke-linecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                    </svg>
+                                    : null
+                              }
+                            </span>
+                          )
+                        }
                       />
                     )
                   })
@@ -90,7 +131,6 @@ export const ProjectPage = () => {
               </ResponsiveBlock>
 
               <ResponsiveBlock
-                // style={{ border: '1px solid red' }}
                 className={clsx(
                   baseClasses.stickyBottom,
                   'md:grid',
@@ -111,8 +151,6 @@ export const ProjectPage = () => {
                 isLimitedForDesktop
                 isPaddedMobile
                 style={{
-                  // backgroundColor: '#fff',
-                  // border: '1px solid red',
                   marginTop: 'auto',
                 }}
               >
@@ -128,7 +166,7 @@ export const ProjectPage = () => {
                           width: '18px',
                         }}
                         data-slot="icon" fill="none" strokeWidth="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
                       </svg>
                     }
                   >
@@ -140,7 +178,7 @@ export const ProjectPage = () => {
                     <Button
                       onClick={handleStopAudio}
                       color='error'
-                      isDisabled={commonState.activeAudioStatus !== 'loaded'}
+                      // isDisabled={loadStatusState[commonState.] !== 'loaded'}
                       startIcon={
                         <svg
                           style={{
@@ -155,12 +193,16 @@ export const ProjectPage = () => {
                           xmlns="http://www.w3.org/2000/svg"
                           aria-hidden="true"
                         >
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"></path>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"></path>
                         </svg>
                       }
                     >
                       <span>Stop</span>
-                      <span>[{commonState.activeAudioStatus}]</span>
+                      {
+                        !!commonState.activeAudioSrc && (
+                          <span>[{loadStatusState[commonState.activeAudioSrc].value}]</span>
+                        )
+                      }
                     </Button>
                   )
                 }

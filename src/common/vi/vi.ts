@@ -17,7 +17,7 @@ class Singleton {
   private _cache: {
     [key: string]: {
       audio: HTMLAudioElement;
-      status: ELoadStatus;
+      // loadStatus: ELoadStatus;
     }
   };
   private _activeAudio: null | HTMLAudioElement;
@@ -25,7 +25,13 @@ class Singleton {
   private _common: {
     appVersion: string;
     isAudioActive: boolean;
-    activeAudioStatus: ELoadStatus;
+    // activeAudioStatus: ELoadStatus;
+    activeAudioSrc: string | null;
+  }
+  private _loadStatus: {
+    [key: string]: {
+      value: ELoadStatus;
+    }
   }
   // NOTE: Etc. 1/3
 
@@ -35,8 +41,10 @@ class Singleton {
     this._common = proxy({
       appVersion: pkg.version,
       isAudioActive: false,
-      activeAudioStatus: ELoadStatus.INACTIVE,
+      // activeAudioStatus: ELoadStatus.INACTIVE,
+      activeAudioSrc: null,
     })
+    this._loadStatus = proxy({})
     this._sounds = {
       'games': gamesData,
       'tom-and-jerry': tomAndJerryData,
@@ -228,6 +236,7 @@ class Singleton {
       this._activeAudio.currentTime = 0.0;
       this._activeAudio = null
       this._common.isAudioActive = false
+      this._common.activeAudioSrc = null
     }
   }
   public playSound({ projectName, soundIndex, cb }: {
@@ -246,38 +255,52 @@ class Singleton {
         if (!!this._sounds[projectName].items[soundIndex]) {
           const targetSrc = this._sounds[projectName].items[soundIndex].audio
           let audio
-          if (!!this._cache[targetSrc] && this._cache[targetSrc].status !== ELoadStatus.ERRORED) {
+          if (
+            !!this._cache[targetSrc]
+            && this._loadStatus[targetSrc].value === ELoadStatus.LOADED
+          )
             audio = this._cache[targetSrc].audio
-          } else {
+          else {
             audio = new Audio(`${PUBLIC_URL}${targetSrc}`)
+            
+            this._cache[targetSrc] = {
+              audio,
+              // loadStatus: this._common.activeAudioStatus,
+            }
+            this._loadStatus[targetSrc] = {
+              value: ELoadStatus.INACTIVE,
+            }
+
             if (!!cb) {
               audio.onloadstart = (e) => {
-                this._common.activeAudioStatus = ELoadStatus.STARTED
+                // this._common.activeAudioStatus = ELoadStatus.STARTED
+                this._loadStatus[targetSrc].value = ELoadStatus.STARTED
                 cb.onLoadStart(e)
               }
               audio.onprogress = (e) => {
                 cb.onLoadProgress(e)
               }
               audio.onloadeddata = (e) => {
-                this._common.activeAudioStatus = ELoadStatus.LOADED
+                // this._common.activeAudioStatus = ELoadStatus.LOADED
+                this._loadStatus[targetSrc].value = ELoadStatus.LOADED
                 cb.onLoadSuccess(e)
               }
               audio.onerror = (e, t) => {
-                this._common.activeAudioStatus = ELoadStatus.ERRORED
+                // this._common.activeAudioStatus = ELoadStatus.ERRORED
+                this._loadStatus[targetSrc].value = ELoadStatus.ERRORED
                 cb.onLoadError(e, t)
               }
             }
             audio.onended = (ev) => {
               this._common.isAudioActive = false
+              this._common.activeAudioSrc = null
             }
             audio.load()
-            this._cache[targetSrc] = {
-              audio,
-              status: this._common.activeAudioStatus,
-            }
           }
           this._activeAudio = audio
           this._common.isAudioActive = true
+          this._common.activeAudioSrc = targetSrc
+          
           this._cache[targetSrc].audio.play()
         } else throw new Error('Нет такого аудио файла')
       } else throw new Error('Нет такого проекта')
@@ -301,6 +324,9 @@ class Singleton {
   // --
   get common() {
     return this._common
+  }
+  get loadStatus() {
+    return this._loadStatus
   }
   // NOTE: Etc. 3/3
 }
