@@ -1,0 +1,65 @@
+{
+  "title": "Plop",
+  "descr": "Viselitsa 2023",
+  "bg": {
+    "src": "/static/projects/plop/main.jpg"
+  },
+  "items": [
+    {
+      "title": "Plop 1",
+      "descr": "",
+      "audio": "/static/projects/plop/audio/plop-1.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Plop 2",
+      "descr": "Water drop",
+      "audio": "/static/projects/plop/audio/plop-2-water-drop.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Plop 3",
+      "descr": "",
+      "audio": "/static/projects/plop/audio/plop-3.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Plop 4",
+      "descr": "",
+      "audio": "/static/projects/plop/audio/plop-4.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Plop 5",
+      "descr": "",
+      "audio": "/static/projects/plop/audio/plop-5-atmospheric.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Plop 6",
+      "descr": "",
+      "audio": "/static/projects/plop/audio/plop-6.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Plop 7",
+      "descr": "",
+      "audio": "/static/projects/plop/audio/plop-7.mp3",
+      "bg": {
+        "src": ""
+      }
+    }
+  ]
+}

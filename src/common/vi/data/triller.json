@@ -1,0 +1,81 @@
+{
+  "title": "Triller",
+  "descr": "Viselitsa 2023",
+  "bg": {
+    "src": "/static/projects/triller/main.jpg"
+  },
+  "items": [
+    {
+      "title": "Triller 1",
+      "descr": "",
+      "audio": "/static/projects/triller/audio/triller-1.wav",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Triller 2",
+      "descr": "",
+      "audio": "/static/projects/triller/audio/triller-2-metallic.wav",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Triller 3",
+      "descr": "",
+      "audio": "/static/projects/triller/audio/triller-3-futuristic.wav",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Triller 4",
+      "descr": "",
+      "audio": "/static/projects/triller/audio/triller-4-cartoon.wav",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Triller 5",
+      "descr": "",
+      "audio": "/static/projects/triller/audio/triller-5-cinematic.wav",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Triller 6",
+      "descr": "",
+      "audio": "/static/projects/triller/audio/triller-6-cinematic.wav",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Triller 7",
+      "descr": "",
+      "audio": "/static/projects/triller/audio/triller-7-cinematic.wav",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Triller 8",
+      "descr": "Bass, long",
+      "audio": "/static/projects/triller/audio/triller-8-bass-long.wav",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Triller 10",
+      "descr": "Ghost horror",
+      "audio": "/static/projects/triller/audio/triller-10-ghost-horror.mp3",
+      "bg": {
+        "src": ""
+      }
+    }
+  ]
+}

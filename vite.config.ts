@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import path from 'node:path'
 import { visualizer } from 'rollup-plugin-visualizer'
@@ -6,8 +6,17 @@ import pkg from './package.json'
 import slugify from 'slugify'
 import browserslistToEsbuild from 'browserslist-to-esbuild'
 import preload from 'vite-plugin-preload'
+import { VitePWA } from 'vite-plugin-pwa'
 
+const defaultNodeEnv = 'production'
+process.env = {
+  ...process.env,
+  ...loadEnv(process.env.NODE_ENV || defaultNodeEnv, process.cwd()),
+}
+const isDev = process.env.NODE_ENV === 'development'
+const PUBLIC_URL = process.env.VITE_PUBLIC_URL || ''
 const GIT_SHA1 = process.env.VITE_GIT_SHA1
+const BRAND_NAME = process.env.VITE_BRAND_NAME || '[NN]'
 
 slugify.extend({ '/': '_' })
 
@@ -22,9 +31,9 @@ const modulesToSeparate = [
   // '@mui/material',
   // '@remix-run',
   'react-dom',
-  'dayjs',
-  'react-google-charts',
-  'react-hook-form',
+  // 'dayjs',
+  // 'react-google-charts',
+  // 'react-hook-form',
 ]
 const _chunksMap = new Map()
 
@@ -34,9 +43,64 @@ export default defineConfig({
   plugins: [
     react(),
     preload(),
+    VitePWA({
+      mode: isDev ? 'development' : 'production',
+      srcDir: 'public/static/pwa/', // NOTE: Default 'public'
+      outDir: 'dist',
+      filename: 'sw.js',
+      manifestFilename: 'site.webmanifest', // NOTE: Default 'manifest.webmanifest'
+      strategies: 'generateSW',
+      injectRegister: 'auto',
+      registerType: 'autoUpdate',
+      minify: false,
+      manifest: {
+        theme_color: "#ea580c",
+        background_color: "#000",
+        name: BRAND_NAME,
+        short_name: BRAND_NAME,
+        start_url: `${PUBLIC_URL}/#/sounds/?source=pwa&debug=1`,
+        scope: PUBLIC_URL,
+        // scope: "./",
+        icons: [
+          {
+            src: `${PUBLIC_URL}/static/pwa/favicon.ico`,
+            sizes: '32x32 16x16',
+            type: 'image/x-icon',
+          },
+          {
+            src: `${PUBLIC_URL}/static/pwa/android-chrome-192x192.png`,
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            purpose: 'maskable',
+            sizes: '512x512',
+            src: `${PUBLIC_URL}/static/pwa/icon512_maskable.png`,
+            type: 'image/png',
+          },
+          {
+            src: `${PUBLIC_URL}/static/pwa/android-chrome-512x512.png`,
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
+        orientation: 'any',
+        display: 'standalone',
+        // display_override: ["fullscreen", "minimal-ui"],
+        // dir: 'auto',
+        lang: 'ru-RU',
+      },
+      useCredentials: true,
+      includeManifestIcons: true,
+      disable: false,
+      devOptions: {
+        enabled: true,
+      },
+    }),
 
     // NOTE: Last one
     // See also https://www.npmjs.com/package/rollup-plugin-visualizer
+    // @ts-ignore
     visualizer({
       title: `Stats | WWW v${pkg.version} | GIT SHA1 ${GIT_SHA1}`,
       template: 'sunburst', // sunburst, treemap, network

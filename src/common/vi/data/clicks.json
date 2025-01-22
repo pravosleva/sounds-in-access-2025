@@ -1,0 +1,161 @@
+{
+  "title": "Clicks",
+  "descr": "Viselitsa 2023",
+  "bg": {
+    "src": "/static/projects/clicks/main.jpg"
+  },
+  "items": [
+    {
+      "title": "Click 1",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-1.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 2",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-2.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 3",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-3.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 4",
+      "descr": "Blow",
+      "audio": "/static/projects/clicks/audio/click-4-blow.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 5",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-5.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 6",
+      "descr": "Photo",
+      "audio": "/static/projects/clicks/audio/click-6-photo.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 7",
+      "descr": "Bell",
+      "audio": "/static/projects/clicks/audio/click-7-bell.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 8",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-8.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 9",
+      "descr": "Digital",
+      "audio": "/static/projects/clicks/audio/click-9.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 10",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-10.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 11",
+      "descr": "Digital",
+      "audio": "/static/projects/clicks/audio/click-11.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 12",
+      "descr": "Digital",
+      "audio": "/static/projects/clicks/audio/click-12.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 13",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-13.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 14",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-14.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 15",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-15.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 16",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-16.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 17",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-17.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 18",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-18.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Click 19",
+      "descr": "",
+      "audio": "/static/projects/clicks/audio/click-19.mp3",
+      "bg": {
+        "src": ""
+      }
+    }
+  ]
+}

@@ -10,15 +10,17 @@ export const SoundsPage = () => {
       <ResponsiveBlock
         // style={{ border: '1px solid red' }}
         className={clsx(
-          'md:grid',
-          'md:grid-cols-3',
-          'md:gap-4',
+          'pt-4',
+          'pb-4',
 
           'flex',
           'flex-col',
           'gap-4',
-          'pt-4',
-          'pb-4',
+          
+          'sm:grid',
+          'sm:grid-cols-3',
+          // 'sm:grid-rows-auto',
+          'sm:gap-4',
         )}
         isLimitedForDesktop
         isPaddedMobile

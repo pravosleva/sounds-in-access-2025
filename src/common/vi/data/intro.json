@@ -1,0 +1,81 @@
+{
+  "title": "Intro",
+  "descr": "Viselitsa 2023",
+  "bg": {
+    "src": "/static/projects/intro/main.jpg"
+  },
+  "items": [
+    {
+      "title": "Blues 1",
+      "descr": "",
+      "audio": "/static/projects/intro/audio/blues-1-intro.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Blues 3",
+      "descr": "Intro / Outro",
+      "audio": "/static/projects/intro/audio/blues-3-intro-outro.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Music 1",
+      "descr": "",
+      "audio": "/static/projects/intro/audio/music-1-intro.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Music 2",
+      "descr": "",
+      "audio": "/static/projects/intro/audio/music-2-intro.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Music 3",
+      "descr": "",
+      "audio": "/static/projects/intro/audio/music-3-intro.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Music 4",
+      "descr": "",
+      "audio": "/static/projects/intro/audio/music-4-intro.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Music 5",
+      "descr": "",
+      "audio": "/static/projects/intro/audio/music-5-china.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Music 6",
+      "descr": "",
+      "audio": "/static/projects/intro/audio/music-6-future.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Music 7",
+      "descr": "",
+      "audio": "/static/projects/intro/audio/music-7-intro-atmospheric-logo.mp3",
+      "bg": {
+        "src": ""
+      }
+    }
+  ]
+}

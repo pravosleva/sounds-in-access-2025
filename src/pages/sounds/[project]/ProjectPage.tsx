@@ -92,7 +92,6 @@ export const ProjectPage = () => {
                                   style={{
                                     width: '20px',
                                     height: '20px',
-                                    // border: '1px solid lightgray',
                                   }}
                                   xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                                   <path strokeLinecap="round" strokeLinejoin="round" d="m7.49 12-3.75 3.75m0 0 3.75 3.75m-3.75-3.75h16.5V4.499" />
@@ -102,7 +101,6 @@ export const ProjectPage = () => {
                                     style={{
                                     width: '20px',
                                     height: '20px',
-                                    // border: '1px solid lightgray',
                                   }}
                                     xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="size-6">
                                       <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
@@ -112,13 +110,21 @@ export const ProjectPage = () => {
                                       style={{
                                         width: '20px',
                                         height: '20px',
-                                        // border: '1px solid lightgray',
                                       }}
                                       xmlns="http://www.w3.org/2000/svg"
                                       viewBox="0 0 24 24" 
                                       fill="none" strokeWidth="1.5" stroke="currentColor">
                                       <path stroke-linecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                                     </svg>
+                                    : loadStatusState[audio].value === ELoadStatus.ERRORED
+                                    ? <svg
+                                        style={{
+                                          width: '20px',
+                                          height: '20px',
+                                        }}
+                                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="size-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+                                      </svg>
                                     : null
                               }
                             </span>

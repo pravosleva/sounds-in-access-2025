@@ -1,0 +1,393 @@
+{
+  "title": "Success",
+  "descr": "Viselitsa 2023",
+  "bg": {
+    "src": "/static/projects/success/main.avif"
+  },
+  "items": [
+    {
+      "title": "Success 2",
+      "descr": "",
+      "audio": "/static/projects/success/audio/success-2.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 3",
+      "descr": "",
+      "audio": "/static/projects/success/audio/success-3.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 4",
+      "descr": "People",
+      "audio": "/static/projects/success/audio/success-4.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 5",
+      "descr": "",
+      "audio": "/static/projects/success/audio/success-5.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 6",
+      "descr": "",
+      "audio": "/static/projects/success/audio/success-6.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 7",
+      "descr": "People",
+      "audio": "/static/projects/success/audio/success-7.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 8",
+      "descr": "",
+      "audio": "/static/projects/success/audio/success-8.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 9",
+      "descr": "People",
+      "audio": "/static/projects/success/audio/success-9.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 11",
+      "descr": "",
+      "audio": "/static/projects/success/audio/success-11.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 12",
+      "descr": "Stupid",
+      "audio": "/static/projects/success/audio/success-12.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 13",
+      "descr": "",
+      "audio": "/static/projects/success/audio/success-13.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 14",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-14-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 15",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-15-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 16",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-16-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 17",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-17-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 18",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-18-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 19",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-19-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 20",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-20-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 21",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-21-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 22",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-22-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 23",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-23-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 24",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-24-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 25",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-25-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 26",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-26-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 27",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-27-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 28",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-28-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 29",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-29-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 30",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-30-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 31",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-31-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 32",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-32-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 33",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-33-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 34",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-34-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 35",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-35-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 36",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-36-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 37",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-37-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 38",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-38-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 39",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-39-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 40",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-40-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 41",
+      "descr": "🎻 Violin long",
+      "audio": "/static/projects/success/audio/success-41-violin-long.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 42",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-42-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 43",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-43-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 44",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-44-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 45",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-45-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 46",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-46-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 47",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-47-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 48",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-48-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 49",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-49-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Success 50",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/success/audio/success-50-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    }
+  ]
+}

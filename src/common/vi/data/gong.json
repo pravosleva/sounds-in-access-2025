@@ -1,0 +1,65 @@
+{
+  "title": "Gong",
+  "descr": "Viselitsa 2023",
+  "bg": {
+    "src": "/static/projects/gong/main.gif"
+  },
+  "items": [
+    {
+      "title": "Gong 1",
+      "descr": "",
+      "audio": "/static/projects/gong/audio/gong-1.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Gong 2",
+      "descr": "",
+      "audio": "/static/projects/gong/audio/gong-2.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Gong 3",
+      "descr": "Big",
+      "audio": "/static/projects/gong/audio/gong-3-big.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Gong 4",
+      "descr": "",
+      "audio": "/static/projects/gong/audio/gong-4.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Gong 5",
+      "descr": "",
+      "audio": "/static/projects/gong/audio/gong-5.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Gong 6",
+      "descr": "",
+      "audio": "/static/projects/gong/audio/gong-6.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Gong 7",
+      "descr": "",
+      "audio": "/static/projects/gong/audio/gong-7.mp3",
+      "bg": {
+        "src": ""
+      }
+    }
+  ]
+}

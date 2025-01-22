@@ -1,0 +1,337 @@
+{
+  "title": "Fails",
+  "descr": "Viselitsa 2023",
+  "bg": {
+    "src": "/static/projects/fails/main.jpg"
+  },
+  "items": [
+    {
+      "title": "Fail 2",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-2.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 3",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-3.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 4",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-4.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 8",
+      "descr": "People",
+      "audio": "/static/projects/fails/audio/fail-8-people.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 9",
+      "descr": "Funny",
+      "audio": "/static/projects/fails/audio/fail-9-funny.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 10",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-10.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 11",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-11.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 12",
+      "descr": "🎺",
+      "audio": "/static/projects/fails/audio/fail-12.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 13",
+      "descr": "🎺",
+      "audio": "/static/projects/fails/audio/fail-13.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 14",
+      "descr": "🎺",
+      "audio": "/static/projects/fails/audio/fail-14.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 15",
+      "descr": "🎺",
+      "audio": "/static/projects/fails/audio/fail-15.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 16",
+      "descr": "🎺",
+      "audio": "/static/projects/fails/audio/fail-16.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 17",
+      "descr": "People",
+      "audio": "/static/projects/fails/audio/fail-17-people.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 18",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-18.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 19",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-19.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 20",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-20.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 21",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-21.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 22",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-22.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 23",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-23.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 24",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-24.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 25",
+      "descr": "Cat",
+      "audio": "/static/projects/fails/audio/fail-25-cat.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 26",
+      "descr": "Cat",
+      "audio": "/static/projects/fails/audio/fail-26-cat.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 27",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-27.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 28",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-28.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 31",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-31.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 32",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-32.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 33",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-33.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 34",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-34.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 35",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-35.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 37",
+      "descr": "Long",
+      "audio": "/static/projects/fails/audio/fail-37-long.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 40",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-40.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 41",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-41.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 42",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-42.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 43",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-43.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 44",
+      "descr": "SC",
+      "audio": "/static/projects/fails/audio/fail-44-sc.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 45",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-45.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 46",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-46.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 47",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-47.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 48",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-48.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 49",
+      "descr": "",
+      "audio": "/static/projects/fails/audio/fail-49.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Fail 50",
+      "descr": "🎻 Violin",
+      "audio": "/static/projects/fails/audio/fail-50-violin.mp3",
+      "bg": {
+        "src": ""
+      }
+    }
+  ]
+}

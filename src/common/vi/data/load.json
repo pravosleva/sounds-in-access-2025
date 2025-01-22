@@ -1,0 +1,89 @@
+{
+  "title": "Load",
+  "descr": "Viselitsa 2023",
+  "bg": {
+    "src": "/static/projects/load/main.jpg"
+  },
+  "items": [
+    {
+      "title": "Load",
+      "descr": "",
+      "audio": "/static/projects/load/audio/load.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Load 2",
+      "descr": "",
+      "audio": "/static/projects/load/audio/load-2.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Load 3",
+      "descr": "",
+      "audio": "/static/projects/load/audio/load-3.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Load 4",
+      "descr": "",
+      "audio": "/static/projects/load/audio/load-4.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Load 5",
+      "descr": "⚙️ Mech",
+      "audio": "/static/projects/load/audio/load-5-mech.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Load 8",
+      "descr": "Email",
+      "audio": "/static/projects/load/audio/load-8-email.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Load 9",
+      "descr": "Email",
+      "audio": "/static/projects/load/audio/load-9-email.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Load 10",
+      "descr": "Email",
+      "audio": "/static/projects/load/audio/load-10-email.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Load 11",
+      "descr": "Voice",
+      "audio": "/static/projects/load/audio/load-11-voice.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Load 12",
+      "descr": "⚙️ Mech",
+      "audio": "/static/projects/load/audio/load-12-mech.mp3",
+      "bg": {
+        "src": ""
+      }
+    }
+  ]
+}

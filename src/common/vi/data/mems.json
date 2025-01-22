@@ -14,6 +14,14 @@
       }
     },
     {
+      "title": "Наши полномочия все",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/polnomochiya-vse.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/polnomochiya-vse.png"
+      }
+    },
+    {
       "title": "Бред же бред",
       "descr": "Гармаш",
       "audio": "/static/projects/mems/audio/bred-je-bred.mp3",
@@ -22,11 +30,27 @@
       }
     },
     {
+      "title": "Да что ты такое несешь?",
+      "descr": "",
+      "audio": "/static/projects/mems/audio/da-chto-ty-chert-poberi.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/da-chto-ty-chert-poberi.png"
+      }
+    },
+    {
       "title": "Ты втираешь мне какую-то дичь",
       "descr": "",
       "audio": "/static/projects/mems/audio/dich.mp3",
       "bg": {
         "src": "/static/projects/mems/audio/dich.jpeg"
+      }
+    },
+    {
+      "title": "Ты по-моему перепутал",
+      "descr": "Паша Техник",
+      "audio": "/static/projects/mems/audio/ty-po-moemu-pereputal.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/ty-po-moemu-pereputal.gif"
       }
     },
     {
@@ -42,15 +66,7 @@
       "descr": "Недовольный клиент казино",
       "audio": "/static/projects/mems/audio/ty-kto-takoi-suka.mp3",
       "bg": {
-        "src": "/static/projects/mems/audio/ty-kto-takoi-suka.png"
-      }
-    },
-    {
-      "title": "Наши полномочия все",
-      "descr": "",
-      "audio": "/static/projects/mems/audio/polnomochiya-vse.mp3",
-      "bg": {
-        "src": "/static/projects/mems/audio/polnomochiya-vse.png"
+        "src": "/static/projects/mems/audio/ty-che-durak-blya.jpg"
       }
     },
     {
@@ -67,14 +83,6 @@
       "audio": "/static/projects/mems/audio/gde-dengi-lebovski.mp3",
       "bg": {
         "src": "/static/projects/mems/audio/gde-dengi-lebovski.webp"
-      }
-    },
-    {
-      "title": "Да что ты такое несешь?",
-      "descr": "",
-      "audio": "/static/projects/mems/audio/da-chto-ty-chert-poberi.mp3",
-      "bg": {
-        "src": "/static/projects/mems/audio/da-chto-ty-chert-poberi.png"
       }
     },
     {
@@ -107,14 +115,6 @@
       "audio": "/static/projects/mems/audio/yacubovich-daladna.mp3",
       "bg": {
         "src": "/static/projects/mems/audio/yacubovich-daladna.jpeg"
-      }
-    },
-    {
-      "title": "Ты по-моему перепутал",
-      "descr": "Паша Техник",
-      "audio": "/static/projects/mems/audio/ty-po-moemu-pereputal.mp3",
-      "bg": {
-        "src": "/static/projects/mems/audio/ty-po-moemu-pereputal.gif"
       }
     },
     {
