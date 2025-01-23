@@ -1,17 +1,19 @@
+export type TSoundPackItem = {
+  title: string;
+  descr: string;
+  audio: string;
+  bg: {
+    src: string;
+  };
+}
+
 export type TSoundPack = {
   title: string;
   descr: string;
   bg: {
     src: string;
   };
-  items: {
-    title: string;
-    descr: string;
-    audio: string;
-    bg: {
-      src: string;
-    };
-  }[];
+  items: TSoundPackItem[];
 }
 export enum EProject {
   WHAT_WHERE_WHEN = 'what_where_when',

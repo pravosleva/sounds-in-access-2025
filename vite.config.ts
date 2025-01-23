@@ -31,9 +31,19 @@ const modulesToSeparate = [
   // '@mui/material',
   // '@remix-run',
   'react-dom',
+  'react-modal-sheet',
   // 'dayjs',
   // 'react-google-charts',
   // 'react-hook-form',
+  'motion',
+  'valtio',
+  'framer-motion/dist/es/animation',
+  'framer-motion/dist/es/gestures',
+  'framer-motion/dist/es/motion',
+  'framer-motion/dist/es/value',
+  'framer-motion/dist/es/utils',
+  'framer-motion/dist/es/render',
+  'framer-motion/dist/es/projection',
 ]
 const _chunksMap = new Map()
 
@@ -59,8 +69,8 @@ export default defineConfig({
         name: BRAND_NAME,
         short_name: BRAND_NAME,
         start_url: `${PUBLIC_URL}/#/sounds/?source=pwa&debug=1`,
-        scope: PUBLIC_URL,
-        // scope: "./",
+        // scope: PUBLIC_URL,
+        scope: "./",
         icons: [
           {
             src: `${PUBLIC_URL}/static/pwa/favicon.ico`,

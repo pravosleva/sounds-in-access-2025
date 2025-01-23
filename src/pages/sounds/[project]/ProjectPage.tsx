@@ -114,7 +114,7 @@ export const ProjectPage = () => {
                                       xmlns="http://www.w3.org/2000/svg"
                                       viewBox="0 0 24 24" 
                                       fill="none" strokeWidth="1.5" stroke="currentColor">
-                                      <path stroke-linecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
                                     </svg>
                                     : loadStatusState[audio].value === ELoadStatus.ERRORED
                                     ? <svg
@@ -160,10 +160,9 @@ export const ProjectPage = () => {
                   marginTop: 'auto',
                 }}
               >
-                <Link
-                  to='/sounds'
-                >
+                <Link to='/sounds'>
                   <Button
+                    fullWidth
                     color='warning'
                     startIcon={
                       <svg
@@ -182,6 +181,7 @@ export const ProjectPage = () => {
                 {
                   !!commonState.isAudioActive && (
                     <Button
+                      fullWidth
                       onClick={handleStopAudio}
                       color='error'
                       // isDisabled={loadStatusState[commonState.] !== 'loaded'}

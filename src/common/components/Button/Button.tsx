@@ -1,29 +1,39 @@
 import { Button as _Button } from '@headlessui/react'
 import clsx from 'clsx'
+import { CSSProperties } from 'react';
 
 type TColor = 'default' | 'primary' | 'success' | 'warning' | 'error';
-type TProps = {
+export type TBtnProps = {
   color: TColor;
   children?: string | React.ReactNode | React.ReactNode[];
   onClick?: () => void;
   isDisabled?: boolean;
   startIcon?: React.ReactNode;
+  fullWidth?: boolean;
+  size?: 'sm';
+  style?: CSSProperties;
 }
 
-export const Button = ({ children, color, onClick, isDisabled, startIcon }: TProps) => {
+export const Button = ({ style, fullWidth, size, children, color, onClick, isDisabled, startIcon }: TBtnProps) => {
   return (
     <_Button
+      style={style || {}}
       className={clsx(
         'rounded',
-        'py-2',
-        'px-4',
+        // 'py-2',
+        // 'px-4',
         'font-bold',
+        'cursor-pointer',
 
         'flex',
         'items-center',
         'justify-center',
-        'w-full',
+        'data-[disabled]:opacity-30',
+        'data-[disabled]:cursor-not-allowed',
         {
+          'py-1 px-2': size === 'sm',
+          'py-2 px-4': size !== 'sm',
+          'w-full': fullWidth,
           [clsx(
             'bg-rose-600',
             'data-[hover]:bg-rose-500',
@@ -52,6 +62,13 @@ export const Button = ({ children, color, onClick, isDisabled, startIcon }: TPro
             'text-black',
             'bg-gradient-to-r from-amber-300',
           )]: color === 'warning',
+          [clsx(
+            'bg-emerald-600',
+            'data-[hover]:bg-emerald-500',
+            'data-[active]:bg-emerald-400',
+            'text-white',
+            'bg-gradient-to-r from-blue-400',
+          )]: color === 'success',
         },
       )}
       disabled={isDisabled}

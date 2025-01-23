@@ -3,6 +3,7 @@ import { vi } from '~/common/vi'
 import { Link } from 'react-router-dom'
 import { EProject } from '~/common/vi/types'
 import clsx from 'clsx'
+import baseClasses from '~/App.module.scss'
 
 export const SoundsPage = () => {
   return (
@@ -44,6 +45,40 @@ export const SoundsPage = () => {
             )
           })
         }
+      </ResponsiveBlock>
+      <ResponsiveBlock
+        className={clsx(
+          baseClasses.stickyBottom,
+          'md:grid',
+          'md:grid-cols-2',
+          'md:gap-4',
+
+          'flex',
+          'flex-col',
+          'gap-2',
+
+          'pt-4',
+          'pb-4',
+          'backdrop-blur-sm',
+
+          'border-t-2',
+          'border-white',
+        )}
+        isLimitedForDesktop
+        isPaddedMobile
+        style={{
+          marginTop: 'auto',
+        }}
+      >
+        <Link to='/randomizers'>
+          <ItemAsPicture
+            title='Randomizers'
+            descr='Your personal packs'
+            bg={{
+              src: '/static/projects/revolver.jpg'
+            }}
+          />
+        </Link>
       </ResponsiveBlock>
     </Layout>
   )

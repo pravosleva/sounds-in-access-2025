@@ -1,4 +1,10 @@
 .wrapperBg {
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 
   // background-image: url(&quot;/static/img/blog/coming-soon-v3.jpg&quot;);
   // filter: grayscale(100%);

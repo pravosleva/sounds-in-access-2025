@@ -2,7 +2,7 @@ import { proxy } from 'valtio'
 // import { mutateObject } from '~/utils/aux-ops'
 // import clsx from 'clsx'
 import pkg from '../../../package.json'
-import { ELoadStatus, EProject, TSoundPack } from './types'
+import { ELoadStatus, EProject, TSoundPack, TSoundPackItem } from './types'
 import gamesData from './data/games.json'
 import tomAndJerryData from './data/tom-and-jerry.json'
 import memsData from './data/mems.json'
@@ -15,13 +15,23 @@ import successData from './data/success.json'
 import gongData from './data/gong.json'
 import loadData from './data/load.json'
 import trillerData from './data/triller.json'
+import { getNormalized } from '~/common/utils'
 
 const PUBLIC_URL = import.meta.env.VITE_PUBLIC_URL || ''
+
+type TSoundData = {
+  projectName: EProject;
+  soundIndex: number;
+  soundPackItem: TSoundPackItem;
+}
 
 class Singleton {
   private static instance: Singleton
   private _sounds: {
     [key in EProject]: TSoundPack;
+  };
+  private _localRandomizers: {
+    [key: string]: TSoundData[];
   };
   private _cache: {
     [key: string]: {
@@ -36,6 +46,7 @@ class Singleton {
     isAudioActive: boolean;
     // activeAudioStatus: ELoadStatus;
     activeAudioSrc: string | null;
+    activeAudioBgSrc: string | null;
   }
   private _loadStatus: {
     [key: string]: {
@@ -52,6 +63,7 @@ class Singleton {
       isAudioActive: false,
       // activeAudioStatus: ELoadStatus.INACTIVE,
       activeAudioSrc: null,
+      activeAudioBgSrc: null,
     })
     this._loadStatus = proxy({})
     this._sounds = {
@@ -68,6 +80,15 @@ class Singleton {
       'games': gamesData,
       'tom-and-jerry': tomAndJerryData,
     }
+
+    let randomizersFromLS
+    try {
+      randomizersFromLS = JSON.parse(localStorage.getItem('sounds') || '{}')
+    } catch (err) {
+      randomizersFromLS= {}
+    }
+    this._localRandomizers = proxy(randomizersFromLS)
+
     this._cache = {}
     // NOTE: Etc. 2/3
   }
@@ -75,6 +96,136 @@ class Singleton {
     if (!Singleton.instance) Singleton.instance = new Singleton()
     return Singleton.instance
   }
+
+  // -- NOTE: Local randomizers
+  public createLocalRandomizer({ title }: {
+    title: string;
+  }): Promise<{ ok: boolean; message?: string }> {
+    const normalized = getNormalized(title)
+    switch (true) {
+      case typeof title !== 'string' || !normalized:
+        return Promise.reject({ ok: false, message: 'Incorrect value' })
+      case !!this._localRandomizers[normalized]:
+        return Promise.reject({ ok: false, message: 'Такой пакет уже есть' })
+      default:
+        this._localRandomizers[normalized] = []
+        localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+        return Promise.resolve({ ok: true, message: 'Created' })
+    }
+  }
+  public removeLocalRandomizer({ title }: {
+    title: string;
+  }): Promise<{ ok: boolean; message?: string }> {
+    switch (true) {
+      case typeof title !== 'string':
+        return Promise.reject({ ok: false, message: 'Incorrect value' })
+      case !title:
+        return Promise.reject({ ok: false, message: 'Нет такого пакета' })
+      default:
+        delete this._localRandomizers[title]
+        localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+        return Promise.resolve({ ok: true, message: 'Removed' })
+    }
+  }
+  public addSoundToRandomizer({ randomizedTitle, soundData }: {
+    randomizedTitle: string;
+    soundData: TSoundData;
+  }) {
+    switch (true) {
+      case typeof randomizedTitle !== 'string' || !randomizedTitle:
+        return Promise.reject({ ok: false, message: 'Incorrect value' })
+      case
+        typeof this._localRandomizers[randomizedTitle] === 'undefined'
+        || !Array.isArray(this._localRandomizers[randomizedTitle]):
+        return Promise.reject({ ok: false, message: 'Нет такого пакета' })
+      default: {
+        const isAlreadyExists = this._localRandomizers[randomizedTitle].some(({ projectName, soundIndex }) => {
+          return projectName === soundData.projectName && soundIndex === soundData.soundIndex
+        })
+        if (isAlreadyExists) return Promise.reject({ ok: false, message: 'Уже добавлено' })
+        else {
+          this._localRandomizers[randomizedTitle].unshift(soundData)
+          localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+          return Promise.resolve({ ok: true, message: 'Added to Randomizer' })
+        }
+      }
+    }
+  }
+  public removeSoundFromRandomizer({ randomizedTitle, soundData }: {
+    randomizedTitle: string;
+    soundData: TSoundData;
+  }) {
+    switch (true) {
+      case typeof randomizedTitle !== 'string' || !randomizedTitle:
+        return Promise.reject({ ok: false, message: 'Incorrect value' })
+      case
+        typeof this._localRandomizers[randomizedTitle] === 'undefined'
+        || !Array.isArray(this._localRandomizers[randomizedTitle]):
+        return Promise.reject({ ok: false, message: 'Нет такого пакета' })
+      default: {
+        const isAlreadyExists = this._localRandomizers[randomizedTitle].some(({ projectName, soundIndex }) => {
+          return (projectName === soundData.projectName && soundIndex === soundData.soundIndex)
+        })
+        if (!isAlreadyExists) return Promise.reject({ ok: false, message: 'Не найдено' })
+        else {
+          const newList = this._localRandomizers[randomizedTitle].filter(({ soundPackItem }) => {
+            return soundPackItem.audio !== soundData.soundPackItem.audio
+          })
+          this._localRandomizers[randomizedTitle] = newList
+          localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+          return Promise.resolve({ ok: true, message: 'Removed from Randomizer' })
+        }
+      }
+    }
+  }
+  public playRandomInRandomizer({
+    randomizerKey,
+  }: {
+    randomizerKey: string;
+  }) {
+    const targetSoundPack = this._localRandomizers[randomizerKey]
+    switch (true) {
+      case typeof targetSoundPack === 'undefined':
+        return Promise.reject({ ok: false, message: 'Not found' })
+      case !Array.isArray(targetSoundPack):
+        return Promise.reject({ ok: false, message: 'Incorrect soundpack format' })
+      case targetSoundPack.length === 0:
+        return Promise.reject({ ok: false, message: 'Empty randomizer' })
+      default: {
+        const getRandomValue = ({ items }: { items: any[] }) => {
+          if (!Array.isArray(items)) return 'getRandomValue ERR: Incorrect arg'
+          const randomIndex = Math.floor(Math.random() * items.length)
+        
+          return items[randomIndex]
+        }
+        const randomItem = getRandomValue({ items: targetSoundPack })
+        this.playSound({ projectName: randomItem.projectName, soundIndex: randomItem.soundIndex })
+        return Promise.resolve({ ok: true })
+      }
+    }
+  }
+  public clearRandomizer({ randomizedTitle }: {
+    randomizedTitle: string;
+  }) {
+    switch (true) {
+      case typeof randomizedTitle !== 'string' || !randomizedTitle:
+        return Promise.reject({ ok: false, message: 'Incorrect value' })
+      case
+        typeof this._localRandomizers[randomizedTitle] === 'undefined'
+        || !Array.isArray(this._localRandomizers[randomizedTitle]):
+        return Promise.reject({ ok: false, message: 'Нет такого пакета' })
+      default: {
+        const isAlreadyExists = Array.isArray(this._localRandomizers[randomizedTitle])
+        if (!isAlreadyExists) return Promise.reject({ ok: false, message: 'Не найдено' })
+        else {
+          this._localRandomizers[randomizedTitle] = []
+          localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+          return Promise.resolve({ ok: true, message: 'Removed from Randomizer' })
+        }
+      }
+    }
+  }
+  // --
 
   public getProjectData({ project }: {
     project: EProject;
@@ -94,6 +245,7 @@ class Singleton {
       this._activeAudio = null
       this._common.isAudioActive = false
       this._common.activeAudioSrc = null
+      this._common.activeAudioBgSrc = null
     }
   }
   public playSound({ projectName, soundIndex, cb }: {
@@ -122,41 +274,37 @@ class Singleton {
             
             this._cache[targetSrc] = {
               audio,
-              // loadStatus: this._common.activeAudioStatus,
             }
             this._loadStatus[targetSrc] = {
               value: ELoadStatus.INACTIVE,
             }
 
-            if (!!cb) {
-              audio.onloadstart = (e) => {
-                // this._common.activeAudioStatus = ELoadStatus.STARTED
-                this._loadStatus[targetSrc].value = ELoadStatus.STARTED
-                cb.onLoadStart(e)
-              }
-              audio.onprogress = (e) => {
-                cb.onLoadProgress(e)
-              }
-              audio.onloadeddata = (e) => {
-                // this._common.activeAudioStatus = ELoadStatus.LOADED
-                this._loadStatus[targetSrc].value = ELoadStatus.LOADED
-                cb.onLoadSuccess(e)
-              }
-              audio.onerror = (e, t) => {
-                // this._common.activeAudioStatus = ELoadStatus.ERRORED
-                this._loadStatus[targetSrc].value = ELoadStatus.ERRORED
-                cb.onLoadError(e, t)
-              }
+            audio.onloadstart = (e) => {
+              this._loadStatus[targetSrc].value = ELoadStatus.STARTED
+              if (!!cb) cb.onLoadStart(e)
+            }
+            audio.onprogress = (e) => {
+              if (!!cb) cb.onLoadProgress(e)
+            }
+            audio.onloadeddata = (e) => {
+              this._loadStatus[targetSrc].value = ELoadStatus.LOADED
+              if (!!cb) cb.onLoadSuccess(e)
+            }
+            audio.onerror = (e, t) => {
+              this._loadStatus[targetSrc].value = ELoadStatus.ERRORED
+              if (!!cb) cb.onLoadError(e, t)
             }
             audio.onended = (ev) => {
               this._common.isAudioActive = false
               this._common.activeAudioSrc = null
+              this._common.activeAudioBgSrc = null
             }
             audio.load()
           }
           this._activeAudio = audio
           this._common.isAudioActive = true
           this._common.activeAudioSrc = targetSrc
+          this._common.activeAudioBgSrc = this._sounds[projectName].items[soundIndex].bg.src
           
           this._cache[targetSrc].audio.play()
         } else throw new Error('Нет такого аудио файла')
@@ -184,6 +332,9 @@ class Singleton {
   }
   get loadStatus() {
     return this._loadStatus
+  }
+  get localRandomizers() {
+    return this._localRandomizers
   }
   // NOTE: Etc. 3/3
 }

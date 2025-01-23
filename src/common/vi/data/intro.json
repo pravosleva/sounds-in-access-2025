@@ -10,7 +10,7 @@
       "descr": "",
       "audio": "/static/projects/intro/audio/blues-1-intro.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/intro/audio/blues.webp"
       }
     },
     {
@@ -18,7 +18,7 @@
       "descr": "Intro / Outro",
       "audio": "/static/projects/intro/audio/blues-3-intro-outro.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/intro/audio/blues.webp"
       }
     },
     {
@@ -56,7 +56,7 @@
     {
       "title": "Music 5",
       "descr": "",
-      "audio": "/static/projects/intro/audio/music-5-china.mp3",
+      "audio": "/static/projects/intro/audio/music-5-intro-china.mp3",
       "bg": {
         "src": ""
       }
@@ -64,7 +64,7 @@
     {
       "title": "Music 6",
       "descr": "",
-      "audio": "/static/projects/intro/audio/music-6-future.mp3",
+      "audio": "/static/projects/intro/audio/music-6-intro-future.mp3",
       "bg": {
         "src": ""
       }

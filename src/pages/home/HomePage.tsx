@@ -25,7 +25,13 @@ export const HomePage = () => {
           to="/sounds"
           className="text-purple-400 underline"
         >
-          All projects
+          All Sound Packs
+        </Link>
+        <Link
+          to="/randomizers"
+          className="text-purple-400 underline"
+        >
+          All Randomizers
         </Link>
       </ResponsiveBlock>
     </Layout>
