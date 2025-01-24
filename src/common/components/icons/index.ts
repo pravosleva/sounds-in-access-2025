@@ -1,4 +1,5 @@
 export * from './ArrowLeft'
+export * from './ArrowUp'
 export * from './Minus'
 export * from './PencilSquare'
 export * from './Play'

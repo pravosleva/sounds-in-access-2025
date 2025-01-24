@@ -463,7 +463,7 @@ export const RandomizersPage = memo(() => {
                                       color='success'
                                       isDisabled={
                                         !!activeRandomizerTitle
-                                        && !!localRandomizers[activeRandomizerTitle].find((e) => e.soundPackItem.audio === audio)
+                                        && !!localRandomizers[activeRandomizerTitle]?.find((e) => e.soundPackItem.audio === audio)
                                       }
                                       // size='sm'
                                       onClick={() => {
@@ -480,7 +480,7 @@ export const RandomizersPage = memo(() => {
                                       color='error'
                                       isDisabled={
                                         !!activeRandomizerTitle
-                                        && !localRandomizers[activeRandomizerTitle].find((e) => e.soundPackItem.audio === audio)
+                                        && !localRandomizers[activeRandomizerTitle]?.find((e) => e.soundPackItem.audio === audio)
                                       }
                                       // size='sm'
                                       onClick={() => handleRemoveSoundFromRandomizer({
