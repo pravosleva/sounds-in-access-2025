@@ -15,6 +15,7 @@ import successData from './data/success.json'
 import gongData from './data/gong.json'
 import loadData from './data/load.json'
 import trillerData from './data/triller.json'
+import bratData from './data/brat-1-2.json'
 import { getNormalized } from '~/common/utils'
 
 const PUBLIC_URL = import.meta.env.VITE_PUBLIC_URL || ''
@@ -30,8 +31,10 @@ class Singleton {
   private _sounds: {
     [key in EProject]: TSoundPack;
   };
-  private _localRandomizers: {
-    [key: string]: TSoundData[];
+  public _localRandomizers: {
+    value: {
+      [key: string]: TSoundData[];
+    }
   };
   private _cache: {
     [key: string]: {
@@ -77,6 +80,7 @@ class Singleton {
       'success': successData,
       'load': loadData,
       'triller': trillerData,
+      'brat-1-2': bratData,
       'games': gamesData,
       'tom-and-jerry': tomAndJerryData,
     }
@@ -85,9 +89,13 @@ class Singleton {
     try {
       randomizersFromLS = JSON.parse(localStorage.getItem('sounds') || '{}')
     } catch (err) {
+      console.warn(err)
       randomizersFromLS= {}
     }
-    this._localRandomizers = proxy(randomizersFromLS)
+    // vi.setLocalRandomizers({ value: randomizersFromLS })
+    this._localRandomizers = proxy({
+      value: randomizersFromLS,
+    })
 
     this._cache = {}
     // NOTE: Etc. 2/3
@@ -98,6 +106,13 @@ class Singleton {
   }
 
   // -- NOTE: Local randomizers
+  public setLocalRandomizers({ value }: {
+    value: {
+      [key: string]: TSoundData[];
+    };
+  }) {
+    this._localRandomizers.value = value
+  }
   public createLocalRandomizer({ title }: {
     title: string;
   }): Promise<{ ok: boolean; message?: string }> {
@@ -105,11 +120,11 @@ class Singleton {
     switch (true) {
       case typeof title !== 'string' || !normalized:
         return Promise.reject({ ok: false, message: 'Incorrect value' })
-      case !!this._localRandomizers[normalized]:
+      case !!this._localRandomizers.value[normalized]:
         return Promise.reject({ ok: false, message: 'Такой пакет уже есть' })
       default:
-        this._localRandomizers[normalized] = []
-        localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+        this._localRandomizers.value[normalized] = []
+        // localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
         return Promise.resolve({ ok: true, message: 'Created' })
     }
   }
@@ -122,8 +137,8 @@ class Singleton {
       case !title:
         return Promise.reject({ ok: false, message: 'Нет такого пакета' })
       default:
-        delete this._localRandomizers[title]
-        localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+        delete this._localRandomizers.value[title]
+        // localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
         return Promise.resolve({ ok: true, message: 'Removed' })
     }
   }
@@ -135,17 +150,17 @@ class Singleton {
       case typeof randomizedTitle !== 'string' || !randomizedTitle:
         return Promise.reject({ ok: false, message: 'Incorrect value' })
       case
-        typeof this._localRandomizers[randomizedTitle] === 'undefined'
-        || !Array.isArray(this._localRandomizers[randomizedTitle]):
+        typeof this._localRandomizers.value[randomizedTitle] === 'undefined'
+        || !Array.isArray(this._localRandomizers.value[randomizedTitle]):
         return Promise.reject({ ok: false, message: 'Нет такого пакета' })
       default: {
-        const isAlreadyExists = this._localRandomizers[randomizedTitle].some(({ projectName, soundIndex }) => {
+        const isAlreadyExists = this._localRandomizers.value[randomizedTitle].some(({ projectName, soundIndex }) => {
           return projectName === soundData.projectName && soundIndex === soundData.soundIndex
         })
         if (isAlreadyExists) return Promise.reject({ ok: false, message: 'Уже добавлено' })
         else {
-          this._localRandomizers[randomizedTitle].unshift(soundData)
-          localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+          this._localRandomizers.value[randomizedTitle].unshift(soundData)
+          // localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
           return Promise.resolve({ ok: true, message: 'Added to Randomizer' })
         }
       }
@@ -159,20 +174,20 @@ class Singleton {
       case typeof randomizedTitle !== 'string' || !randomizedTitle:
         return Promise.reject({ ok: false, message: 'Incorrect value' })
       case
-        typeof this._localRandomizers[randomizedTitle] === 'undefined'
-        || !Array.isArray(this._localRandomizers[randomizedTitle]):
+        typeof this._localRandomizers.value[randomizedTitle] === 'undefined'
+        || !Array.isArray(this._localRandomizers.value[randomizedTitle]):
         return Promise.reject({ ok: false, message: 'Нет такого пакета' })
       default: {
-        const isAlreadyExists = this._localRandomizers[randomizedTitle].some(({ projectName, soundIndex }) => {
+        const isAlreadyExists = this._localRandomizers.value[randomizedTitle].some(({ projectName, soundIndex }) => {
           return (projectName === soundData.projectName && soundIndex === soundData.soundIndex)
         })
         if (!isAlreadyExists) return Promise.reject({ ok: false, message: 'Не найдено' })
         else {
-          const newList = this._localRandomizers[randomizedTitle].filter(({ soundPackItem }) => {
+          const newList = this._localRandomizers.value[randomizedTitle].filter(({ soundPackItem }) => {
             return soundPackItem.audio !== soundData.soundPackItem.audio
           })
-          this._localRandomizers[randomizedTitle] = newList
-          localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+          this._localRandomizers.value[randomizedTitle] = newList
+          // localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
           return Promise.resolve({ ok: true, message: 'Removed from Randomizer' })
         }
       }
@@ -183,7 +198,7 @@ class Singleton {
   }: {
     randomizerKey: string;
   }) {
-    const targetSoundPack = this._localRandomizers[randomizerKey]
+    const targetSoundPack = this._localRandomizers.value[randomizerKey]
     switch (true) {
       case typeof targetSoundPack === 'undefined':
         return Promise.reject({ ok: false, message: 'Not found' })
@@ -211,15 +226,15 @@ class Singleton {
       case typeof randomizedTitle !== 'string' || !randomizedTitle:
         return Promise.reject({ ok: false, message: 'Incorrect value' })
       case
-        typeof this._localRandomizers[randomizedTitle] === 'undefined'
-        || !Array.isArray(this._localRandomizers[randomizedTitle]):
+        typeof this._localRandomizers.value[randomizedTitle] === 'undefined'
+        || !Array.isArray(this._localRandomizers.value[randomizedTitle]):
         return Promise.reject({ ok: false, message: 'Нет такого пакета' })
       default: {
-        const isAlreadyExists = Array.isArray(this._localRandomizers[randomizedTitle])
+        const isAlreadyExists = Array.isArray(this._localRandomizers.value[randomizedTitle])
         if (!isAlreadyExists) return Promise.reject({ ok: false, message: 'Не найдено' })
         else {
-          this._localRandomizers[randomizedTitle] = []
-          localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
+          this._localRandomizers.value[randomizedTitle] = []
+          // localStorage.setItem('sounds', JSON.stringify(this._localRandomizers))
           return Promise.resolve({ ok: true, message: 'Removed from Randomizer' })
         }
       }
@@ -334,7 +349,7 @@ class Singleton {
     return this._loadStatus
   }
   get localRandomizers() {
-    return this._localRandomizers
+    return this._localRandomizers.value
   }
   // NOTE: Etc. 3/3
 }

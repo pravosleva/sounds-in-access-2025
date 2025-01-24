@@ -1,0 +1,97 @@
+{
+  "title": "Брат 1/2",
+  "descr": "",
+  "bg": {
+    "src": "/static/projects/brat-1-2/main.jpeg"
+  },
+  "items": [
+    {
+      "title": "Ну здравствуй, брат",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/nu_zdravstvuy_brat.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/nu_zdravstvuy_brat.jpg"
+      }
+    },
+    {
+      "title": "Не тот счастлив у кого много добра, а тот у кого жена верна",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/ne_tot_schastliv.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/ne_tot_schastliv.jpg"
+      }
+    },
+    {
+      "title": "Любишь медок, люби и холодок",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/lyubish_medok_-_lyubi_i_holodok.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/ne_tot_schastliv.jpg"
+      }
+    },
+    {
+      "title": "Кто в Москве не бывал - красоты не видал",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/kto-v-moskve.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/ne_tot_schastliv.jpg"
+      }
+    },
+    {
+      "title": "Брат, не выручишь - мне край",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/ne_viruchish_-_mne.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/ne_viruchish_-_mne.jpg"
+      }
+    },
+    {
+      "title": "Ты меня знаешь, мои цены реальные",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/moi-ceny.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/ne_viruchish_-_mne.jpg"
+      }
+    },
+    {
+      "title": "Бери ношу по себе, чтоб не падать при хотьбе",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/beri-noshu-po-sebe-chtob-ne-padat-pri-hotbe.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/ne_tot_schastliv.jpg"
+      }
+    },
+    {
+      "title": "Черный, как сволочь",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/chernyiy-kak-svoloch.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/ne_viruchish_-_mne.jpg"
+      }
+    },
+    {
+      "title": "Вот уроды",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/vot-urodyi.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/vot-urodyi.webp"
+      }
+    },
+    {
+      "title": "Жизнь висит на нитке, а думает о прибытке",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/jizn-visit-na-nitke-a-dumaet-o-pribyitke.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/ne_tot_schastliv.jpg"
+      }
+    },
+    {
+      "title": "Поживешь подольше увидишь побольше",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/pojivesh-podolshe-uvidish-pobolshe.mp3",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/ne_tot_schastliv.jpg"
+      }
+    }
+  ]
+}

@@ -1,11 +1,15 @@
+import { memo } from 'react'
 import { Layout, ItemAsPicture, ResponsiveBlock } from '~/common/components'
 import { vi } from '~/common/vi'
 import { Link } from 'react-router-dom'
 import { EProject } from '~/common/vi/types'
 import clsx from 'clsx'
 import baseClasses from '~/App.module.scss'
+import { useSnapshot } from 'valtio/react'
 
-export const SoundsPage = () => {
+export const SoundsPage = memo(() => {
+  const localRandomizers = useSnapshot(vi.localRandomizers)
+
   return (
     <Layout>
       <ResponsiveBlock
@@ -35,7 +39,7 @@ export const SoundsPage = () => {
                 // className='text-purple-400'
               >
                 <ItemAsPicture
-                  title={vi.projects[(projectName as EProject)].title}
+                  title={`${vi.projects[(projectName as EProject)].title} [${vi.projects[(projectName as EProject)].items.length}]`}
                   descr={vi.projects[(projectName as EProject)].descr}
                   bg={{
                     src: vi.projects[(projectName as EProject)].bg.src
@@ -49,9 +53,9 @@ export const SoundsPage = () => {
       <ResponsiveBlock
         className={clsx(
           baseClasses.stickyBottom,
-          'md:grid',
-          'md:grid-cols-2',
-          'md:gap-4',
+          // 'md:grid',
+          // 'md:grid-cols-2',
+          // 'md:gap-4',
 
           'flex',
           'flex-col',
@@ -59,7 +63,8 @@ export const SoundsPage = () => {
 
           'pt-4',
           'pb-4',
-          'backdrop-blur-sm',
+          'backdrop-blur-md',
+          'md:backdrop-blur-sm',
 
           'border-t-2',
           'border-white',
@@ -72,7 +77,7 @@ export const SoundsPage = () => {
       >
         <Link to='/randomizers'>
           <ItemAsPicture
-            title='Randomizers'
+            title={`Randomizers [${Object.keys(localRandomizers).length}]`}
             descr='Your personal packs'
             bg={{
               src: '/static/projects/revolver.jpg'
@@ -82,4 +87,4 @@ export const SoundsPage = () => {
       </ResponsiveBlock>
     </Layout>
   )
-}
+})

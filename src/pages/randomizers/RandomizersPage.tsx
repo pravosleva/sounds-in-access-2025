@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useState, memo } from 'react'
 import clsx from 'clsx'
 // import { Link } from 'react-router-dom'
 import { ItemAsPicture, Layout, ProjectHeader, ResponsiveBlock } from '~/common/components'
@@ -13,10 +13,9 @@ import classes from './RandomizersPage.module.scss'
 import { ELoadStatus, EProject, TSoundPackItem } from '~/common/vi/types'
 import { Link } from 'react-router-dom'
 
-export const RandomizersPage = () => {
+export const RandomizersPage = memo(() => {
   const [err, setErr] = useState<string | null>(null)
   const [activeRandomizerTitle, setActiveRandomizerTitle] = useState<string | null>(null)
-  
   const localRandomizers = useSnapshot(vi.localRandomizers)
   const [isSheetOpened, setIsSheetOpened] = useState(false)
   const handleToggleSheet = useCallback((value?: boolean) => () => {
@@ -139,7 +138,7 @@ export const RandomizersPage = () => {
                     <ItemAsPicture
                       isDisabled={localRandomizers[title].length === 0}
                       key={`${title}-${i}`}
-                      title={title}
+                      title={`${title} [${localRandomizers[title].length}]`}
                       descr='▶️ Play random'
                       onClick={() => {
                         setActiveRandomizerTitle(title)
@@ -166,6 +165,7 @@ export const RandomizersPage = () => {
                             fullWidth
                             color='default'
                             onClick={handleClearRandomizer({ title })}
+                            isDisabled={localRandomizers[title].length === 0}
                           >
                             <TrashX size={{ w: 16, h: 16 }} />
                           </Button>
@@ -257,10 +257,6 @@ export const RandomizersPage = () => {
       <ResponsiveBlock
         className={clsx(
           baseClasses.stickyBottom,
-          'md:grid',
-          'md:grid-cols-2',
-          'md:gap-4',
-
           'flex',
           'flex-col',
           'gap-2',
@@ -292,24 +288,33 @@ export const RandomizersPage = () => {
             </Button>
           )
         }
-        <Button
-          onClick={handleCreateRandomizer}
-          color='success'
-          // isDisabled={loadStatusState[commonState.] !== 'loaded'}
-          startIcon={<Plus size={{ w: 18, h: 18 }} />}
+        <ResponsiveBlock
+          className={clsx(
+          baseClasses.stickyBottom,
+            'grid',
+            'grid-cols-2',
+            'gap-4',
+          )}
         >
-          <span>Create</span>
-        </Button>
-        <Link to='/sounds'>
+          <Link to='/sounds'>
+            <Button
+              fullWidth
+              color='default'
+              // isDisabled={loadStatusState[commonState.] !== 'loaded'}
+              startIcon={<ArrowLeft size={{ w: 18, h: 18 }} />}
+            >
+              <span>Back</span>
+            </Button>
+          </Link>
           <Button
-            fullWidth
-            color='default'
+            onClick={handleCreateRandomizer}
+            color='success'
             // isDisabled={loadStatusState[commonState.] !== 'loaded'}
-            startIcon={<ArrowLeft size={{ w: 18, h: 18 }} />}
+            startIcon={<Plus size={{ w: 18, h: 18 }} />}
           >
-            <span>Back</span>
+            <span>Create</span>
           </Button>
-        </Link>
+        </ResponsiveBlock>
         {/* <Link to='/sounds'>
           <ItemAsPicture
             title='Back'
@@ -410,6 +415,8 @@ export const RandomizersPage = () => {
                                     'flex-row',
                                     'gap-1',  
                                     'pt-1',
+                                    'pl-2',
+                                    'pr-2',
                                     // 'pb-1',
                                   )}
                                   // isLimitedForDesktop
@@ -426,7 +433,7 @@ export const RandomizersPage = () => {
                                   >
                                     <Button
                                       color={commonState.activeAudioSrc === audio ? 'warning' : 'default'}
-                                      size='sm'
+                                      // size='sm'
                                       onClick={() => {
                                         vi.playSound({
                                           projectName: projectName as EProject,
@@ -438,7 +445,7 @@ export const RandomizersPage = () => {
                                     </Button>
                                     <Button
                                       color='default'
-                                      size='sm'
+                                      // size='sm'
                                       onClick={() => vi.stopCurrentSound()}
                                     >
                                       <Stop size={{ w: 16, h: 16 }} />
@@ -449,7 +456,7 @@ export const RandomizersPage = () => {
                                         !!activeRandomizerTitle
                                         && !!localRandomizers[activeRandomizerTitle].find((e) => e.soundPackItem.audio === audio)
                                       }
-                                      size='sm'
+                                      // size='sm'
                                       onClick={() => {
                                         handleAddSoundToRandomizer({
                                           projectName,
@@ -466,7 +473,7 @@ export const RandomizersPage = () => {
                                         !!activeRandomizerTitle
                                         && !localRandomizers[activeRandomizerTitle].find((e) => e.soundPackItem.audio === audio)
                                       }
-                                      size='sm'
+                                      // size='sm'
                                       onClick={() => handleRemoveSoundFromRandomizer({
                                         projectName,
                                         soundIndex: i,
@@ -492,4 +499,4 @@ export const RandomizersPage = () => {
       </Sheet>
     </Layout>
   )
-}
+})

@@ -54,6 +54,9 @@ export default defineConfig({
     react(),
     preload(),
     VitePWA({
+      workbox: {
+        sourcemap: true,
+      },
       mode: isDev ? 'development' : 'production',
       srcDir: 'public/static/pwa/', // NOTE: Default 'public'
       outDir: 'dist',

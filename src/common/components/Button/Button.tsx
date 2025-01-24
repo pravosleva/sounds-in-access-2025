@@ -67,7 +67,7 @@ export const Button = ({ style, fullWidth, size, children, color, onClick, isDis
             'data-[hover]:bg-emerald-500',
             'data-[active]:bg-emerald-400',
             'text-white',
-            'bg-gradient-to-r from-blue-400',
+            'bg-gradient-to-r from-green-400',
           )]: color === 'success',
         },
       )}
