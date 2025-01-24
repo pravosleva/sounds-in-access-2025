@@ -81,21 +81,36 @@ export default defineConfig({
             type: 'image/x-icon',
           },
           {
-            src: `${PUBLIC_URL}/static/pwa/android-chrome-192x192.png`,
-            sizes: '192x192',
-            type: 'image/png',
+            src: "pwa-64x64.png",
+            sizes: "64x64",
+            type: "image/png"
+          },
+          {
+            src: "pwa-192x192.png",
+            sizes: "192x192",
+            type: "image/png"
+          },
+          {
+            src: "pwa-512x512.png",
+            sizes: "512x512",
+            type: "image/png"
           },
           {
             purpose: 'maskable',
             sizes: '512x512',
-            src: `${PUBLIC_URL}/static/pwa/icon512_maskable.png`,
+            src: `${PUBLIC_URL}/static/pwa/maskable-icon-512x512.png`,
             type: 'image/png',
           },
-          {
-            src: `${PUBLIC_URL}/static/pwa/android-chrome-512x512.png`,
-            sizes: '512x512',
-            type: 'image/png',
-          },
+          // {
+          //   src: `${PUBLIC_URL}/static/pwa/android-chrome-512x512.png`,
+          //   sizes: '512x512',
+          //   type: 'image/png',
+          // },
+          // {
+          //   src: `${PUBLIC_URL}/static/pwa/android-chrome-x512.png`,
+          //   sizes: '512x512',
+          //   type: 'image/png',
+          // },
         ],
         orientation: 'any',
         display: 'standalone',

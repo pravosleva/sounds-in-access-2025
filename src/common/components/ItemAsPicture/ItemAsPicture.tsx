@@ -32,29 +32,30 @@ export const ItemAsPicture = memo(({ isDisabled, isHeightMax, title, bg, descr, 
         ref={ref}
         className={clsx(
           classes.wrapperBg,
-          'rounded',
-          'rounded-md',
-          'hover:shadow-xl',
+          // 'hover:shadow-xl',
           // 'hover:outline',
           // 'hover:outline-offset-4',
           // 'hover:outline-solid',
           
-          'hover:ring-4',
-          'hoer:ring-offset-2',
-          'hover:ring-gray',
+          // 'hover:ring-4',
+          // 'hover:ring-offset-2',
+          // 'hover:ring-gray',
           
-          'active:ring-4',
-          'active:ring-offset-2',
-          'active:ring-gray',
+          // 'active:ring-4',
+          // 'active:ring-offset-2',
+          // 'active:ring-gray',
 
-          'focus:ring-2',
-          'focus:ring-offset-2',
-          'focus:ring-red',
+          // 'focus:ring-2',
+          // 'focus:ring-offset-2',
+          // 'focus:ring-red',
 
           'text-left',
           'w-full',
           {
             [classes.cursorPointer]: !!onClick,
+            'rounded': !actions,
+            'rounded-md': !actions,
+            'rounded-t-md': !!actions,
           },
           classes.relativeBox,
         )}
@@ -92,7 +93,7 @@ export const ItemAsPicture = memo(({ isDisabled, isHeightMax, title, bg, descr, 
         }
       </button>
     )
-  }, [bottomRightImage, descr, title, bg.src, inView, isDisabled, isHeightMax])
+  }, [actions, bottomRightImage, descr, title, bg.src, inView, isDisabled, isHeightMax])
 
   return (
     <>
@@ -103,7 +104,7 @@ export const ItemAsPicture = memo(({ isDisabled, isHeightMax, title, bg, descr, 
             className={clsx(
               'flex',
               'flex-col',
-              'gap-2',
+              'gap-[1px]',
             )}
           >
             {MemoizedBtn}
@@ -111,7 +112,7 @@ export const ItemAsPicture = memo(({ isDisabled, isHeightMax, title, bg, descr, 
               className={clsx(
                 'flex',
                 'flex-row',
-                'gap-2',
+                'gap-[1px]',
               )}
             >
               {actions}

@@ -163,7 +163,8 @@ export const RandomizersPage = memo(() => {
                             fullWidth
                             onClick={handleEditRandomizer({ title })}
                             color={activeRandomizerTitle === title ? 'warning' : 'default'}
-                            size='sm'
+                            // size='sm'
+                            className={'rounded-none rounded-bl-md'}
                           >
                             <PencilSquare size={{ w: 16, h: 16 }} />
                           </Button>
@@ -172,7 +173,8 @@ export const RandomizersPage = memo(() => {
                             color='default'
                             onClick={handleClearRandomizer({ title })}
                             isDisabled={localRandomizers[title].length === 0}
-                            size='sm'
+                            // size='sm'
+                            className={'rounded-none'}
                           >
                             <TrashX size={{ w: 16, h: 16 }} />
                           </Button>
@@ -180,7 +182,8 @@ export const RandomizersPage = memo(() => {
                             fullWidth
                             color='error'
                             onClick={handleDeleteRandomizer({ title })}
-                            size='sm'
+                            // size='sm'
+                            className={'rounded-none rounded-br-md'}
                           >
                             <Trash size={{ w: 16, h: 16 }} />
                           </Button>

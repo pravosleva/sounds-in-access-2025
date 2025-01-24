@@ -12,9 +12,10 @@ export type TBtnProps = {
   fullWidth?: boolean;
   size?: 'sm';
   style?: CSSProperties;
+  className?: string;
 }
 
-export const Button = ({ style, fullWidth, size, children, color, onClick, isDisabled, startIcon }: TBtnProps) => {
+export const Button = ({ style, className, fullWidth, size, children, color, onClick, isDisabled, startIcon }: TBtnProps) => {
   return (
     <_Button
       style={style || {}}
@@ -70,6 +71,7 @@ export const Button = ({ style, fullWidth, size, children, color, onClick, isDis
             'bg-gradient-to-r from-green-400',
           )]: color === 'success',
         },
+        className,
       )}
       disabled={isDisabled}
       onClick={onClick}

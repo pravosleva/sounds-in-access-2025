@@ -1,0 +1,89 @@
+{
+  "title": "Фильмы СССР",
+  "descr": "",
+  "bg": {
+    "src": "/static/projects/ussr-films/main.jpg"
+  },
+  "items": [
+    {
+      "title": "Вор должен сидеть в тюрьме",
+      "descr": "Место встречи изменить нельзя",
+      "audio": "/static/projects/ussr-films/audio/gleb-zhiglov-vor-dolzhen-sidet-v-tyurme.mp3",
+      "bg": {
+        "src": "/static/projects/ussr-films/audio/gleb-zhiglov.webp"
+      }
+    },
+    {
+      "title": "А теперь горбатый! Я сказал, горбатый!",
+      "descr": "Место встречи изменить нельзя",
+      "audio": "/static/projects/ussr-films/audio/a-teper-gorbatyy-ya-skazal-gorbatyy.ogg",
+      "bg": {
+        "src": "/static/projects/ussr-films/audio/gleb-zhiglov.webp"
+      }
+    },
+    {
+      "title": "Морду ему набить!",
+      "descr": "12 стульев",
+      "audio": "/static/projects/ussr-films/audio/mordu-nabit.ogg",
+      "bg": {
+        "src": "/static/projects/ussr-films/audio/mordu-nabit.jpg"
+      }
+    },
+    {
+      "title": "Меня терзают смутные сомнения",
+      "descr": "Иван Васильевич меняет профессию",
+      "audio": "/static/projects/ussr-films/audio/menya-terzayut-smutnyie-somneniya.ogg",
+      "bg": {
+        "src": "/static/projects/ussr-films/audio/menya-terzayut-smutnyie-somneniya.jpg"
+      }
+    },
+    {
+      "title": "А что вы на меня так смотрите, на мне узоров нет и цветы не растут",
+      "descr": "Иван Васильевич меняет профессию",
+      "audio": "/static/projects/ussr-films/audio/na-mne-uzorov-net.ogg",
+      "bg": {
+        "src": "/static/projects/ussr-films/audio/na-mne-uzorov-net.jpg"
+      }
+    },
+    {
+      "title": "Че ж ты молчишь, сволочь",
+      "descr": "Иван Васильевич меняет профессию",
+      "audio": "/static/projects/ussr-films/audio/che-zh-ty-molchish-svoloch.ogg",
+      "bg": {
+        "src": "/static/projects/ussr-films/audio/che-zh-ty-molchish-svoloch.jpg"
+      }
+    },
+    {
+      "title": "Вас уже выпустили из сумашедшего дома?",
+      "descr": "Иван Васильевич меняет профессию",
+      "audio": "/static/projects/ussr-films/audio/vas-uzhe-vypustili-iz-sumasshedshego-doma-1.ogg",
+      "bg": {
+        "src": "/static/projects/ussr-films/audio/vas-uzhe-vypustili-iz-sumasshedshego-doma.jpg"
+      }
+    },
+    {
+      "title": "Погоня за транзисторами",
+      "descr": "Иван Васильевич меняет профессию",
+      "audio": "/static/projects/ussr-films/audio/pogonya-za-tranzistorami.ogg",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Кот и аквариум",
+      "descr": "Иван Васильевич меняет профессию",
+      "audio": "/static/projects/ussr-films/audio/kot-i-akvarium.ogg",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "Увертюра (титры)",
+      "descr": "Иван Васильевич меняет профессию",
+      "audio": "/static/projects/ussr-films/audio/uvertyura-titry.ogg",
+      "bg": {
+        "src": ""
+      }
+    }
+  ]
+}

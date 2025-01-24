@@ -17,6 +17,7 @@ import loadData from './data/load.json'
 import trillerData from './data/triller.json'
 import bratData from './data/brat-1-2.json'
 import crimeRussiaData from './data/crime-russia.json'
+import madeInUSSRData from './data/ussr-films.json'
 import { getNormalized } from '~/common/utils'
 
 const PUBLIC_URL = import.meta.env.VITE_PUBLIC_URL || ''
@@ -72,6 +73,7 @@ class Singleton {
     this._loadStatus = proxy({})
     this._sounds = {
       'what_where_when': wwwData,
+      'ussr-films': madeInUSSRData,
       'mems': memsData,
       'intro': introData,
       'gong': gongData,

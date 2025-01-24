@@ -92,6 +92,14 @@
       "bg": {
         "src": "/static/projects/brat-1-2/audio/ne_tot_schastliv.jpg"
       }
+    },
+    {
+      "title": "Вот суки, раков не дали поесть",
+      "descr": "",
+      "audio": "/static/projects/brat-1-2/audio/rakov-ne-dali-poest.ogg",
+      "bg": {
+        "src": "/static/projects/brat-1-2/audio/vot-urodyi.webp"
+      }
     }
   ]
 }

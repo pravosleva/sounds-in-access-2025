@@ -84,7 +84,7 @@ export const SoundsPage = memo(() => {
         <Link to='/randomizers'>
           <ItemAsPicture
             title={`Randomizers [${Object.keys(localRandomizers).length}]`}
-            descr='Your personal packs'
+            descr='' // 'Your personal packs'
             bg={{
               src: '/static/projects/revolver.jpg'
             }}
