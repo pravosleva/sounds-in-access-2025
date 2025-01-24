@@ -16,6 +16,7 @@ import gongData from './data/gong.json'
 import loadData from './data/load.json'
 import trillerData from './data/triller.json'
 import bratData from './data/brat-1-2.json'
+import crimeRussiaData from './data/crime-russia.json'
 import { getNormalized } from '~/common/utils'
 
 const PUBLIC_URL = import.meta.env.VITE_PUBLIC_URL || ''
@@ -80,6 +81,7 @@ class Singleton {
       'success': successData,
       'load': loadData,
       'triller': trillerData,
+      'crime-russia': crimeRussiaData,
       'brat-1-2': bratData,
       'games': gamesData,
       'tom-and-jerry': tomAndJerryData,

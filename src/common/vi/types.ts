@@ -29,6 +29,7 @@ export enum EProject {
   LOAD_2023 = 'load',
   TRILLER_2023 = 'triller',
   BRAT_1_2 = 'brat-1-2',
+  CRIME_RUSSIA = 'crime-russia'
 }
 export enum ELoadStatus {
   INACTIVE = 'inactive',

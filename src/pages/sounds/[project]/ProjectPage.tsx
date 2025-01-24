@@ -149,7 +149,8 @@ export const ProjectPage = () => {
 
                   'pt-4',
                   'pb-4',
-                  'backdrop-blur-sm',
+                  'backdrop-blur-md',
+                  'md:backdrop-blur-sm',
 
                   'border-t-2',
                   'border-white',

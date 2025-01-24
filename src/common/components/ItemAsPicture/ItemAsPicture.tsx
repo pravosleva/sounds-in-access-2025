@@ -17,11 +17,12 @@ type TProps = {
   bottomRightImage?: React.ReactNode;
   actions?: React.ReactNode;
   isDisabled?: boolean;
+  isHeightMax?: boolean;
 }
 
-export const ItemAsPicture = memo(({ isDisabled, title, bg, descr, onClick, bottomRightImage, actions }: TProps) => {
+export const ItemAsPicture = memo(({ isDisabled, isHeightMax, title, bg, descr, onClick, bottomRightImage, actions }: TProps) => {
   const [ref, inView] = useInView({
-    threshold: 0.5,
+    threshold: 0.1,
   })
 
   const MemoizedBtn = useMemo(() => {
@@ -62,6 +63,7 @@ export const ItemAsPicture = memo(({ isDisabled, title, bg, descr, onClick, bott
           backgroundImage: inView
             ? `url("${PUBLIC_URL}${bg.src}")`
             : 'none',
+          height: isHeightMax ? '100%' : 'auto',
         }}
       >
         <div
@@ -90,7 +92,7 @@ export const ItemAsPicture = memo(({ isDisabled, title, bg, descr, onClick, bott
         }
       </button>
     )
-  }, [bottomRightImage, descr, title, bg.src, inView, isDisabled])
+  }, [bottomRightImage, descr, title, bg.src, inView, isDisabled, isHeightMax])
 
   return (
     <>

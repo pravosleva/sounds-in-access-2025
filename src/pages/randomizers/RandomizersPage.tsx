@@ -121,8 +121,12 @@ export const RandomizersPage = memo(() => {
           Object.keys(localRandomizers).length > 0 ? (
             <ResponsiveBlock
               className={clsx(
-                'flex',
-                'flex-col',
+                // 'flex',
+                // 'flex-col',
+                // 'gap-4',
+
+                'grid',
+                'grid-cols-2',
                 'gap-4',
 
                 'sm:grid',
@@ -136,6 +140,7 @@ export const RandomizersPage = memo(() => {
                 Object.keys(localRandomizers).map((title, i) => {
                   return (
                     <ItemAsPicture
+                      isHeightMax
                       isDisabled={localRandomizers[title].length === 0}
                       key={`${title}-${i}`}
                       title={`${title} [${localRandomizers[title].length}]`}
@@ -158,6 +163,7 @@ export const RandomizersPage = memo(() => {
                             fullWidth
                             onClick={handleEditRandomizer({ title })}
                             color={activeRandomizerTitle === title ? 'warning' : 'default'}
+                            size='sm'
                           >
                             <PencilSquare size={{ w: 16, h: 16 }} />
                           </Button>
@@ -166,6 +172,7 @@ export const RandomizersPage = memo(() => {
                             color='default'
                             onClick={handleClearRandomizer({ title })}
                             isDisabled={localRandomizers[title].length === 0}
+                            size='sm'
                           >
                             <TrashX size={{ w: 16, h: 16 }} />
                           </Button>
@@ -173,6 +180,7 @@ export const RandomizersPage = memo(() => {
                             fullWidth
                             color='error'
                             onClick={handleDeleteRandomizer({ title })}
+                            size='sm'
                           >
                             <Trash size={{ w: 16, h: 16 }} />
                           </Button>
@@ -263,7 +271,8 @@ export const RandomizersPage = memo(() => {
 
           'pt-4',
           'pb-4',
-          'backdrop-blur-sm',
+          'backdrop-blur-md',
+          'md:backdrop-blur-sm',
 
           'border-t-2',
           'border-white',

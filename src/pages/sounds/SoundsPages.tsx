@@ -18,8 +18,13 @@ export const SoundsPage = memo(() => {
           'pt-4',
           'pb-4',
 
-          'flex',
-          'flex-col',
+          // 'flex',
+          // 'flex-col',
+          // 'gap-4',
+
+          'grid',
+          'auto-rows-max',
+          'grid-cols-2',
           'gap-4',
           
           'sm:grid',
@@ -36,9 +41,10 @@ export const SoundsPage = memo(() => {
               <Link
                 key={projectName}
                 to={`/sounds/${projectName}`}
-                // className='text-purple-400'
+                className='height-max'
               >
                 <ItemAsPicture
+                  isHeightMax
                   title={`${vi.projects[(projectName as EProject)].title} [${vi.projects[(projectName as EProject)].items.length}]`}
                   descr={vi.projects[(projectName as EProject)].descr}
                   bg={{
