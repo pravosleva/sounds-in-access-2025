@@ -81,36 +81,53 @@ export default defineConfig({
             type: 'image/x-icon',
           },
           {
-            src: "pwa-64x64.png",
-            sizes: "64x64",
+            purpose: "maskable",
+            sizes: "1024x1024",
+            src: `${PUBLIC_URL}/static/pwa/maskable_icon.png`,
             type: "image/png"
           },
           {
-            src: "pwa-192x192.png",
+            purpose: "maskable",
+            sizes: "48x48",
+            src: `${PUBLIC_URL}/static/pwa/maskable_icon_x48.png`,
+            type: "image/png"
+          },
+          {
+            purpose: "maskable",
+            sizes: "72x72",
+            src: `${PUBLIC_URL}/static/pwa/maskable_icon_x72.png`,
+            type: "image/png"
+          },
+          {
+            purpose: "maskable",
+            sizes: "96x96",
+            src: `${PUBLIC_URL}/static/pwa/maskable_icon_x96.png`,
+            type: "image/png"
+          },
+          {
+            purpose: "maskable",
+            sizes: "128x128",
+            src: `${PUBLIC_URL}/static/pwa/maskable_icon_x128.png`,
+            type: "image/png"
+          },
+          {
+            purpose: "maskable",
             sizes: "192x192",
+            src: `${PUBLIC_URL}/static/pwa/maskable_icon_x192.png`,
             type: "image/png"
           },
           {
-            src: "pwa-512x512.png",
+            purpose: "maskable",
+            sizes: "384x384",
+            src: `${PUBLIC_URL}/static/pwa/maskable_icon_x384.png`,
+            type: "image/png"
+          },
+          {
+            purpose: "maskable",
             sizes: "512x512",
+            src: `${PUBLIC_URL}/static/pwa/maskable_icon_x512.png`,
             type: "image/png"
-          },
-          {
-            purpose: 'maskable',
-            sizes: '512x512',
-            src: `${PUBLIC_URL}/static/pwa/maskable-icon-512x512.png`,
-            type: 'image/png',
-          },
-          // {
-          //   src: `${PUBLIC_URL}/static/pwa/android-chrome-512x512.png`,
-          //   sizes: '512x512',
-          //   type: 'image/png',
-          // },
-          // {
-          //   src: `${PUBLIC_URL}/static/pwa/android-chrome-x512.png`,
-          //   sizes: '512x512',
-          //   type: 'image/png',
-          // },
+          }
         ],
         orientation: 'any',
         display: 'standalone',

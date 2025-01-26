@@ -42,8 +42,11 @@ export const FixedScrollTopBtn = memo(() => {
             {
               [classes.isRequired]: isMoreThan2Screens,
             },
+            // 'background-color-lightgray',
+            'bg-orange-500/50',
+            'text-white',
             'backdrop-blur-sm',
-            // 'text-white',
+            'shadow-lg',
           )}
         >
           <ArrowUp size={{ w: 18, h: 18 }} />

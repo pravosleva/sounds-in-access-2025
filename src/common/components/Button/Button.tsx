@@ -20,7 +20,7 @@ export const Button = ({ style, className, fullWidth, size, children, color, onC
     <_Button
       style={style || {}}
       className={clsx(
-        'rounded',
+        // 'rounded',
         // 'py-2',
         // 'px-4',
         'font-bold',

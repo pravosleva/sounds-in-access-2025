@@ -1,0 +1,49 @@
+{
+  "title": "Pirated video tape",
+  "descr": "",
+  "bg": {
+    "src": "/static/projects/pirated-video-tape/main.jpg"
+  },
+  "items": [
+    {
+      "title": "Арктичекая тоска",
+      "descr": "",
+      "audio": "/static/projects/pirated-video-tape/audio/arctic-yearning.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "⚡️ Ах ты убл_док, м_ть твою... 1",
+      "descr": "Андрей Юрьевич Гаврилов",
+      "audio": "/static/projects/pirated-video-tape/audio/akh-ty-ublyudokmat-tvoyu.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "⚡️ Ах ты убл_док, м_ть твою... 4",
+      "descr": "Андрей Юрьевич Гаврилов",
+      "audio": "/static/projects/pirated-video-tape/audio/akh-ty-ublyudokmat-tvoyu4.mp3",
+      "bg": {
+        "src": ""
+      }
+    },
+    {
+      "title": "И восстали машины из пепла ядерного огня...",
+      "descr": "Леонид Вениаминович Володарский",
+      "audio": "/static/projects/pirated-video-tape/audio/kiborg-ubiyts4.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/rejisser-kiborg-ubiytsa.webp"
+      }
+    },
+    {
+      "title": "Киборг убийца",
+      "descr": "Леонид Вениаминович Володарский",
+      "audio": "/static/projects/mems/audio/rejisser-kiborg-ubiytsa.mp3",
+      "bg": {
+        "src": "/static/projects/mems/audio/rejisser-kiborg-ubiytsa.webp"
+      }
+    }
+  ]
+}

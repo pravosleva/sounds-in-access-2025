@@ -61,10 +61,11 @@ export const ProjectPage = () => {
                   'flex',
                   'flex-col',
                   'gap-4',
+                  'grid-cols-1',
 
-                  'sm:grid',
+                  'xs:grid',
+                  'xs:grid-cols-2',
                   'sm:grid-cols-3',
-                  'sm:gap-4',                  
                 )}
                 isLimitedForDesktop
                 isPaddedMobile
@@ -83,6 +84,7 @@ export const ProjectPage = () => {
                         descr={descr}
                         bg={bg}
                         onClick={handleProjectClick({ index: i })}
+                        className='rounded-md'
                         bottomRightImage={
                           !!loadStatusState[audio] && (
                             <span>
@@ -175,8 +177,9 @@ export const ProjectPage = () => {
                         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
                       </svg>
                     }
+                    className='rounded-md'
                   >
-                    All projects
+                    All packs
                   </Button>
                 </Link>
                 {
@@ -203,6 +206,7 @@ export const ProjectPage = () => {
                           <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"></path>
                         </svg>
                       }
+                      className='rounded-md'
                     >
                       <span>Stop</span>
                       {

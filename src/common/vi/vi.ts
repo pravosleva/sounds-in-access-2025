@@ -18,6 +18,7 @@ import trillerData from './data/triller.json'
 import bratData from './data/brat-1-2.json'
 import crimeRussiaData from './data/crime-russia.json'
 import madeInUSSRData from './data/ussr-films.json'
+import piratedVideoTape from './data/pirated-video-tape.json'
 import { getNormalized } from '~/common/utils'
 
 const PUBLIC_URL = import.meta.env.VITE_PUBLIC_URL || ''
@@ -75,6 +76,7 @@ class Singleton {
       'what_where_when': wwwData,
       'ussr-films': madeInUSSRData,
       'mems': memsData,
+      'pirated-video-tape': piratedVideoTape,
       'intro': introData,
       'gong': gongData,
       'clicks': clicksData,

@@ -5,11 +5,12 @@
 ## PWA
 ```html
 <link rel="apple-touch-icon" sizes="180x180" href="%VITE_PUBLIC_URL%/static/pwa/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="%VITE_PUBLIC_URL%/static/pwa/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="%VITE_PUBLIC_URL%/static/pwa/favicon-16x16.png">
-    <link rel="manifest" href="%VITE_PUBLIC_URL%/static/pwa/site.webmanifest">
-    
+<link rel="icon" type="image/png" sizes="32x32" href="%VITE_PUBLIC_URL%/static/pwa/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="%VITE_PUBLIC_URL%/static/pwa/favicon-16x16.png">
+<link rel="manifest" href="%VITE_PUBLIC_URL%/static/pwa/site.webmanifest">
 ```
+
+https://maskable.app/editor
 
 ## SVG icons
 

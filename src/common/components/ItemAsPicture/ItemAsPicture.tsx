@@ -18,9 +18,10 @@ type TProps = {
   actions?: React.ReactNode;
   isDisabled?: boolean;
   isHeightMax?: boolean;
+  className?: string;
 }
 
-export const ItemAsPicture = memo(({ isDisabled, isHeightMax, title, bg, descr, onClick, bottomRightImage, actions }: TProps) => {
+export const ItemAsPicture = memo(({ className, isDisabled, isHeightMax, title, bg, descr, onClick, bottomRightImage, actions }: TProps) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
   })
@@ -53,11 +54,12 @@ export const ItemAsPicture = memo(({ isDisabled, isHeightMax, title, bg, descr, 
           'w-full',
           {
             [classes.cursorPointer]: !!onClick,
-            'rounded': !actions,
-            'rounded-md': !actions,
-            'rounded-t-md': !!actions,
+            // 'rounded': !actions,
+            // 'rounded-md': !actions,
+            // 'rounded-t-md': !!actions,
           },
           classes.relativeBox,
+          className,
         )}
         onClick={onClick}
         style={{

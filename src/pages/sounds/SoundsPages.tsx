@@ -6,6 +6,7 @@ import { EProject } from '~/common/vi/types'
 import clsx from 'clsx'
 import baseClasses from '~/App.module.scss'
 import { useSnapshot } from 'valtio/react'
+// import classes from './SoundsPage.module.scss'
 
 export const SoundsPage = memo(() => {
   const localRandomizers = useSnapshot(vi.localRandomizers)
@@ -15,9 +16,6 @@ export const SoundsPage = memo(() => {
       <ResponsiveBlock
         // style={{ border: '1px solid red' }}
         className={clsx(
-          'pt-4',
-          'pb-4',
-
           // 'flex',
           // 'flex-col',
           // 'gap-4',
@@ -25,15 +23,23 @@ export const SoundsPage = memo(() => {
           'grid',
           'auto-rows-max',
           'grid-cols-2',
-          'gap-4',
+          'gap-0',
           
           'sm:grid',
           'sm:grid-cols-3',
           // 'sm:grid-rows-auto',
           'sm:gap-4',
+
+          'pt-0',
+          'pb-0',
+          'sm:pt-4',
+          'sm:pb-4',
+
+          // classes.wrapper,
         )}
         isLimitedForDesktop
-        isPaddedMobile
+        // isPaddedMobile
+        isPaddedDesktop
       >
         {
           Object.keys(vi.projects).map((projectName) => {
@@ -50,6 +56,10 @@ export const SoundsPage = memo(() => {
                   bg={{
                     src: vi.projects[(projectName as EProject)].bg.src
                   }}
+                  className={clsx(
+                    'sm:rounded',
+                    'sm:rounded-md',
+                  )}
                 />
               </Link>
             )
@@ -88,6 +98,9 @@ export const SoundsPage = memo(() => {
             bg={{
               src: '/static/projects/revolver.jpg'
             }}
+            className={clsx(
+              'rounded-md',
+            )}
           />
         </Link>
       </ResponsiveBlock>

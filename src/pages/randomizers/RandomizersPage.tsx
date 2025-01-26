@@ -126,12 +126,10 @@ export const RandomizersPage = memo(() => {
                 // 'gap-4',
 
                 'grid',
-                'grid-cols-2',
-                'gap-4',
-
-                'sm:grid',
-                'sm:grid-cols-3',
-                'sm:gap-4',                  
+                'grid-cols-1',
+                'xs:grid-cols-2',
+                'sm:grid-cols-3',  
+                'gap-4',           
               )}
               isLimitedForDesktop
               // isPaddedMobile
@@ -157,6 +155,7 @@ export const RandomizersPage = memo(() => {
                           ? commonState.activeAudioBgSrc
                           : '/static/projects/revolver.jpg',
                       }}
+                      className='rounded-t-md'
                       actions={
                         <>
                           <Button
@@ -232,6 +231,8 @@ export const RandomizersPage = memo(() => {
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
                                   </svg>
                                 : loadStatusState[commonState.activeAudioSrc].value === ELoadStatus.LOADED
+                                  // ? commonState.activeAudioSrc === localRandomizers[title].
+                                  // ? <Play size={{ w: 20, h: 20 }} />
                                   ? <svg
                                     style={{
                                       width: '20px',
@@ -295,6 +296,7 @@ export const RandomizersPage = memo(() => {
                 vi.stopCurrentSound()
               }}
               startIcon={<Stop size={{ w: 16, h: 16 }} />}
+              className='rounded-md'
             >
               Stop
             </Button>
@@ -314,6 +316,7 @@ export const RandomizersPage = memo(() => {
               color='default'
               // isDisabled={loadStatusState[commonState.] !== 'loaded'}
               startIcon={<ArrowLeft size={{ w: 18, h: 18 }} />}
+              className='rounded-md'
             >
               <span>Back</span>
             </Button>
@@ -323,6 +326,7 @@ export const RandomizersPage = memo(() => {
             color='success'
             // isDisabled={loadStatusState[commonState.] !== 'loaded'}
             startIcon={<Plus size={{ w: 18, h: 18 }} />}
+            className='rounded-md'
           >
             <span>Create</span>
           </Button>
@@ -440,7 +444,7 @@ export const RandomizersPage = memo(() => {
                                     className={clsx(
                                       'grid',
                                       'grid-cols-4',
-                                      'gap-2',
+                                      'gap-[1px]',
                                     )}
                                   >
                                     <Button
@@ -452,6 +456,7 @@ export const RandomizersPage = memo(() => {
                                           soundIndex: i,
                                         })
                                       }}
+                                      className='rounded-l-md'
                                     >
                                       <Play size={{ w: 16, h: 16 }} />
                                     </Button>
@@ -491,6 +496,7 @@ export const RandomizersPage = memo(() => {
                                         soundIndex: i,
                                         soundPackItem,
                                       })}
+                                      className='rounded-r-md'
                                     >
                                       <TrashX size={{ w: 16, h: 16 }} />
                                     </Button>

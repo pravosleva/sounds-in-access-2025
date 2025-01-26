@@ -32,6 +32,7 @@ export const ProjectHeader = ({ title, bg }: TProps) => {
         {
           'backdrop-blur-sm': !bg.src,
         },
+        'bg-cover',
       )}
       style={{
         zIndex: 1,
@@ -51,7 +52,7 @@ export const ProjectHeader = ({ title, bg }: TProps) => {
         <div
           className={clsx(
             classes.content,
-            'p-4',
+            'px-4 py-2',
             'md:rounded-bl-md',
             'md:rounded-br-md',
           )}

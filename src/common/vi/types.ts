@@ -31,6 +31,7 @@ export enum EProject {
   BRAT_1_2 = 'brat-1-2',
   CRIME_RUSSIA = 'crime-russia',
   USSR_FILMS = 'ussr-films',
+  PIRATED_VIDEO_TAPE = 'pirated-video-tape'
 }
 export enum ELoadStatus {
   INACTIVE = 'inactive',

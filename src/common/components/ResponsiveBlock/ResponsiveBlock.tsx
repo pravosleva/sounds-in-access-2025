@@ -13,6 +13,7 @@ type TProps = {
   isLimitedForDesktop?: boolean;
   // isLastSection?: boolean;
   hasRedBorder?: boolean;
+  isPaddedDesktop?: boolean;
 }
 
 // const limitForDesktop = 1000
@@ -27,7 +28,8 @@ export const ResponsiveBlock: React.FC<any> = ({
   // hasDesktopFrame,
   isLimitedForDesktop,
   // isLastSection,
-  hasRedBorder,
+  // hasRedBorder,
+  isPaddedDesktop,
 }: TProps) => {
   switch (true) {
     case isLimitedForDesktop:
@@ -50,9 +52,11 @@ export const ResponsiveBlock: React.FC<any> = ({
             'place-content-center',
             'max-w-screen-md',
             'max-w-screen-md',
-            isPaddedMobile && 'px-4 xs:px-0',
+            // 'px-0',
+            isPaddedMobile && 'px-4',
             // isLimitedForDesktop &&
             className,
+            isPaddedDesktop && 'sm:px-4'
           )}
           style={{
             width: '100%',

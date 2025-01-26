@@ -36,6 +36,94 @@
       "bg": {
         "src": "/static/projects/games/audio/GTA-San-Andreas.webp"
       }
+    },
+    {
+      "title": "Valve theme",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/the-valve-logo-1998-version.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "Med",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/medshot4.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "Mode select",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/mode-select.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "Inactive button",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/inactive-button.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "E button",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/e-button.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "Deny select",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/deny-select.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "Blip 1",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/blip1.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "Access denied",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/access-denied.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "Button 3",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/button3.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "Сирена",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/siren.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
+    },
+    {
+      "title": "Welcome to Black Mesa",
+      "descr": "Half Life 1998",
+      "audio": "/static/projects/games/audio/welcome-to-black-mesa.mp3",
+      "bg": {
+        "src": "/static/projects/games/audio/half-life-logo.png"
+      }
     }
   ]
 }
