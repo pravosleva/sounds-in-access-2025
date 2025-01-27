@@ -43,7 +43,7 @@ export const FixedScrollTopBtn = memo(() => {
               [classes.isRequired]: isMoreThan2Screens,
             },
             // 'background-color-lightgray',
-            'bg-orange-500/50',
+            'bg-orange-600/70',
             'text-white',
             'backdrop-blur-sm',
             'shadow-lg',

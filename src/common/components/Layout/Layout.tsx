@@ -1,13 +1,15 @@
 import clsx from 'clsx'
 import classes from './Layout.module.scss'
-import { FixedScrollTopBtn } from './components'
+import { FixedScrollTopBtn, FixedStopBtn } from './components'
 import { ErrorBoundary } from '~/common';
+import { CSSProperties } from 'react';
 
 type TProps = {
   children: React.ReactNode;
+  style?: CSSProperties;
 }
 
-export const Layout = ({ children }: TProps) => {
+export const Layout = ({ children, style }: TProps) => {
   return (
     <>
       <div
@@ -28,16 +30,14 @@ export const Layout = ({ children }: TProps) => {
             // 'items-center',
           )
         }
-        style={{
-          // minHeight: '100%',
-          // border: '2px solid black'
-        }}
+        style={style || {}}
       >
         <ErrorBoundary>
           {children}
         </ErrorBoundary>
       </div>
       <FixedScrollTopBtn />
+      <FixedStopBtn />
     </>
   )
 }
