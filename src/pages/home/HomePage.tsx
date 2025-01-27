@@ -35,10 +35,10 @@ export const HomePage = () => {
           >
             <ItemAsPicture
               // isHeightMax
-              title='All Sounds'
+              title='Sounds'
               descr=''
               bg={{
-                src: '/static/sound-waves.svg'
+                src: '/static/amplitude.svg'
               }}
               className={clsx(
                 'rounded',
@@ -60,7 +60,7 @@ export const HomePage = () => {
           >
             <ItemAsPicture
               // isHeightMax
-              title='All Randomizers'
+              title='Randomizers'
               descr=''
               bg={{
                 src: '/static/projects/revolver.jpg'

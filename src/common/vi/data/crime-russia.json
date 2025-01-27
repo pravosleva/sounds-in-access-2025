@@ -10,7 +10,7 @@
       "descr": "",
       "audio": "/static/projects/crime-russia/audio/main-theme.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/crime-russia/finger-print.svg"
       }
     },
     {
@@ -18,7 +18,7 @@
       "descr": "",
       "audio": "/static/projects/crime-russia/audio/igor-nazaruk-crime-russia-intro-95-02.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/crime-russia/finger-print.svg"
       }
     },
     {
@@ -26,7 +26,7 @@
       "descr": "",
       "audio": "/static/projects/crime-russia/audio/fragment-1.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/crime-russia/finger-print.svg"
       }
     },
     {
@@ -34,7 +34,7 @@
       "descr": "",
       "audio": "/static/projects/crime-russia/audio/fragment-2.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/crime-russia/finger-print.svg"
       }
     },
     {
@@ -42,7 +42,7 @@
       "descr": "",
       "audio": "/static/projects/crime-russia/audio/ego_avtoritet_byl_ogromen.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/crime-russia/finger-print.svg"
       }
     }
   ]

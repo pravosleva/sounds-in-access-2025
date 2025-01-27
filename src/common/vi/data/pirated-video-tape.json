@@ -2,7 +2,7 @@
   "title": "Pirated video tape",
   "descr": "",
   "bg": {
-    "src": "/static/projects/pirated-video-tape/main.jpg"
+    "src": "/static/projects/pirated-video-tape/vhs-30deg.svg"
   },
   "items": [
     {
@@ -10,7 +10,7 @@
       "descr": "",
       "audio": "/static/projects/pirated-video-tape/audio/arctic-yearning.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/pirated-video-tape/vhs-30deg.svg"
       }
     },
     {
@@ -18,7 +18,7 @@
       "descr": "Андрей Юрьевич Гаврилов",
       "audio": "/static/projects/pirated-video-tape/audio/akh-ty-ublyudokmat-tvoyu.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/pirated-video-tape/vhs-30deg.svg"
       }
     },
     {
@@ -26,7 +26,7 @@
       "descr": "Андрей Юрьевич Гаврилов",
       "audio": "/static/projects/pirated-video-tape/audio/akh-ty-ublyudokmat-tvoyu4.mp3",
       "bg": {
-        "src": ""
+        "src": "/static/projects/pirated-video-tape/vhs-30deg.svg"
       }
     },
     {
