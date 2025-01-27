@@ -1,5 +1,5 @@
 import { memo } from 'react'
-import { Layout, ItemAsPicture, ResponsiveBlock } from '~/common/components'
+import { Layout, ItemAsPicture, ResponsiveBlock, Button } from '~/common/components'
 import { vi } from '~/common/vi'
 import { Link } from 'react-router-dom'
 import { EProject } from '~/common/vi/types'
@@ -16,22 +16,21 @@ export const SoundsPage = memo(() => {
       <ResponsiveBlock
         // style={{ border: '1px solid red' }}
         className={clsx(
-          // 'flex',
-          // 'flex-col',
-          // 'gap-4',
+          'flex',
+          'flex-col',
+          'gap-4',
 
-          'grid',
-          'auto-rows-max',
-          'grid-cols-2',
-          'gap-0',
-          
+          // 'grid',
+          // 'auto-rows-max',
+          // 'grid-cols-2',
+          // 'gap-0',
           'sm:grid',
           'sm:grid-cols-3',
-          // 'sm:grid-rows-auto',
           'sm:gap-4',
+          // 'pt-0',
+          // 'pb-0',
 
-          'pt-0',
-          'pb-0',
+          'p-4',
           'sm:pt-4',
           'sm:pb-4',
 
@@ -57,6 +56,7 @@ export const SoundsPage = memo(() => {
                     src: vi.projects[(projectName as EProject)].bg.src
                   }}
                   className={clsx(
+                    'rounded-md',
                     'sm:rounded',
                     'sm:rounded-md',
                   )}
@@ -102,6 +102,25 @@ export const SoundsPage = memo(() => {
               'rounded-md',
             )}
           />
+        </Link>
+        <Link to='/'>
+          <Button
+            fullWidth
+            color='default'
+            startIcon={
+              <svg
+                style={{
+                  height: '18px',
+                  width: '18px',
+                }}
+                data-slot="icon" fill="none" strokeWidth="1.5" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+              </svg>
+            }
+            className='rounded-md'
+          >
+            Home
+          </Button>
         </Link>
       </ResponsiveBlock>
     </Layout>

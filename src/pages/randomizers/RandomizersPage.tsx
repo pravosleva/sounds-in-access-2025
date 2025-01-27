@@ -310,7 +310,7 @@ export const RandomizersPage = memo(() => {
             'gap-4',
           )}
         >
-          <Link to='/sounds'>
+          <Link to='/'>
             <Button
               fullWidth
               color='default'
@@ -318,7 +318,7 @@ export const RandomizersPage = memo(() => {
               startIcon={<ArrowLeft size={{ w: 18, h: 18 }} />}
               className='rounded-md'
             >
-              <span>Back</span>
+              <span>Home</span>
             </Button>
           </Link>
           <Button

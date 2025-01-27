@@ -1,38 +1,77 @@
 import clsx from 'clsx'
 import { Link } from 'react-router-dom'
-import { Layout, ResponsiveBlock } from '~/common/components'
+import { ItemAsPicture, Layout, ResponsiveBlock } from '~/common/components'
+import classes from './HomePage.module.scss'
 
 export const HomePage = () => {
   return (
     <Layout>
       <ResponsiveBlock
-        // style={{ border: '1px solid red' }}
         className={clsx(
-          'md:grid',
-          'md:grid-cols-3',
-          'md:gap-4',
+          classes.wrapper,
+          classes.re
+          // 'md:grid',
+          // 'md:grid-cols-3',
+          // 'md:gap-4',
 
-          'flex',
-          'flex-col',
-          'gap-4',
-          'pt-2',
-          'pb-2',
+          // 'flex',
+          // 'flex-col',
+          // 'gap-4',
+          // 'pt-2',
+          // 'pb-2',
         )}
         isLimitedForDesktop
         isPaddedMobile
       >
-        <Link
-          to="/sounds"
-          className="text-purple-400 underline"
+        <div
+          className={clsx(
+            classes.absoluteBadge,
+            classes.topRight,
+          )}
         >
-          All Sound Packs
-        </Link>
-        <Link
-          to="/randomizers"
-          className="text-purple-400 underline"
+          <Link
+            to="/sounds"
+            className="text-purple-400 underline"
+          >
+            <ItemAsPicture
+              // isHeightMax
+              title='All Sounds'
+              descr=''
+              bg={{
+                src: '/static/sound-waves.svg'
+              }}
+              className={clsx(
+                'rounded',
+                'rounded-md',
+              )}
+            />
+          </Link>
+        </div>
+
+        <div
+          className={clsx(
+            classes.absoluteBadge,
+            classes.bottomLeft,
+          )}
         >
-          All Randomizers
-        </Link>
+          <Link
+            to="/randomizers"
+            className="text-purple-400 underline"
+          >
+            <ItemAsPicture
+              // isHeightMax
+              title='All Randomizers'
+              descr=''
+              bg={{
+                src: '/static/projects/revolver.jpg'
+              }}
+              className={clsx(
+                'rounded',
+                'rounded-md',
+              )}
+            />
+          </Link>
+        </div>
       </ResponsiveBlock>
     </Layout>
   )

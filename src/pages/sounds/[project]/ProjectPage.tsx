@@ -63,8 +63,9 @@ export const ProjectPage = () => {
                   'gap-4',
                   'grid-cols-1',
 
-                  'xs:grid',
-                  'xs:grid-cols-2',
+                  // 'xs:grid',
+                  // 'xs:grid-cols-2',
+                  'sm:grid',
                   'sm:grid-cols-3',
                 )}
                 isLimitedForDesktop

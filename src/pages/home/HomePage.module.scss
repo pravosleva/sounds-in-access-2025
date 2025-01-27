@@ -1,0 +1,46 @@
+// @use "tailwindcss" as *;
+// @import "tailwindcss";
+
+.wrapper {
+  min-height: 100dvh;
+  // width: 100dvh;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  // transform: rotate(270deg);
+  position: relative;
+}
+
+.absoluteBadge {
+  position: absolute;
+}
+
+.topRight {
+  top: 2rem;
+  right: 2rem;
+}
+
+.bottomLeft {
+  bottom: 2rem;
+  left: 2rem;
+}
+
+@media(max-width: 640px) {
+  .wrapper {
+    // background-color: #000;
+    background-image: url('/static/audio-cassette-v-circle.svg');
+  }
+
+  .topRight,
+  .bottomLeft {
+    width: calc(100% - 2rem * 2);
+  }
+}
+
+@media(min-width: 641px) {
+  .wrapper {
+    background-image: url('/static/audio-cassette-circle.svg');
+  }
+}

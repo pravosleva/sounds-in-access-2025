@@ -71,7 +71,7 @@ export default defineConfig({
         background_color: "#000",
         name: BRAND_NAME,
         short_name: BRAND_NAME,
-        start_url: `${PUBLIC_URL}/#/sounds/?source=pwa&debug=1`,
+        start_url: `${PUBLIC_URL}/#/?source=pwa&debug=1`,
         // scope: PUBLIC_URL,
         scope: "./",
         icons: [
